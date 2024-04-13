@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import DataContext from "../context/dataContext";
 
 const Quiz = () => {
@@ -13,6 +13,8 @@ const Quiz = () => {
     nextQuestion,
     showTheResult,
   } = useContext(DataContext);
+
+  const [playerInput, setPlayerInput] = useState("");
 
   return (
     <section
@@ -39,23 +41,36 @@ const Quiz = () => {
                 </h5>
               </div>
               <div>
-                {question?.options?.map((item, index) => (
-                  <button
-                    key={index}
-                    className={`option w-100 text-start btn text-white py-2 px-3 mt-3 rounded btn-dark ${
-                      correctAnswer === item && "bg-success"
-                    }`}
-                    onClick={(event) => checkAnswer(event, item)}
+                <input
+                  onChange={(e) => {
+                    setPlayerInput(e.target.value);
+                  }}
+                  value={playerInput}
+                  placeholder="Type your answer..."
+                  className={`option w-100 text-start btn text-white py-2 px-3 mt-3 rounded btn-dark`} //${correctAnswer === item && "bg-success"}
+                ></input>
+                <button
+                  className={`option w-100 text-start btn text-white py-2 px-3 mt-3 rounded btn-dark`}
+                  onClick={(event) => checkAnswer(event, playerInput)}
+                >
+                  Submit
+                </button>
+                {correctAnswer && (
+                  <div
+                    className={`option w-100 text-start btn text-white py-2 px-3 mt-3 rounded btn-dark`} //${correctAnswer === item && "bg-success"}
                   >
-                    {item}
-                  </button>
-                ))}
+                    {question.answer}
+                  </div>
+                )}
               </div>
 
               {questionIndex + 1 !== quizs.length ? (
                 <button
                   className="btn py-2 w-100 mt-3 bg-primary text-light fw-bold"
-                  onClick={nextQuestion}
+                  onClick={() => {
+                    setPlayerInput("");
+                    nextQuestion();
+                  }}
                   disabled={!selectedAnswer}
                 >
                   Next Question

@@ -36,13 +36,32 @@ export const DataProvider = ({ children }) => {
     setShowQuiz(true);
   };
 
+  const stripSentence = (s) => {
+    return s
+      ? s
+          .toLowerCase()
+          .split("")
+          .filter((char) => /\p{Script=Latin}/u.test(char))
+          .join("")
+      : "";
+  };
+
+  const validateAnswer = (correct, proposed) => {
+    correct = stripSentence(correct);
+    proposed = stripSentence(proposed);
+    console.log(44, correct, proposed);
+    return correct === proposed;
+  };
+
   // Check Answer
   const checkAnswer = (event, selected) => {
+    let isCorrect = validateAnswer(question.answer, selected);
+
     if (!selectedAnswer) {
       setCorrectAnswer(question.answer);
       setSelectedAnswer(selected);
 
-      if (selected === question.answer) {
+      if (isCorrect) {
         event.target.classList.add("bg-success");
         setMarks(marks + 5);
       } else {
