@@ -1,21 +1,20 @@
-import React from 'react';
-import Start from './components/Start';
-import Quiz from './components/Quiz';
-import Result from './components/Result';
-import { DataProvider } from './context/dataContext';
+import React from "react";
+import Start from "./components/Start";
+import Quiz from "./components/Quiz";
+import Result from "./components/Result";
+import { DataProvider } from "./context/dataContext";
 
 function App() {
   return (
     <DataProvider>
       {/* Welcome Page */}
-      <Start/>
+      <Start />
 
       {/* Quiz Page */}
-      <Quiz/>
+      <Quiz />
 
       {/* Result Page */}
-      <Result/>
-
+      <Result />
     </DataProvider>
   );
 }
