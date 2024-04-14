@@ -3,9 +3,9 @@ import DataContext from "../context/dataContext";
 
 const Quiz = () => {
   const {
-    showQuiz,
+    showRound,
     cuestion,
-    quizs,
+    round,
     checkAnswer,
     correctAnswers,
     selectedAnswer,
@@ -19,7 +19,7 @@ const Quiz = () => {
   return (
     <section
       className="bg-dark text-white"
-      style={{ display: `${showQuiz ? "block" : "none"}` }}
+      style={{ display: `${showRound ? "block" : "none"}` }}
     >
       <div className="container">
         <div className="row vh-100 align-items-center justify-content-center">
@@ -29,6 +29,7 @@ const Quiz = () => {
               style={{ background: "#3d3d3d", borderColor: "#646464" }}
             >
               <div className="d-flex justify-content-between gap-md-3">
+                <h5 className="mb-2 fs-normal lh-base">{round?.title}</h5>
                 <h5 className="mb-2 fs-normal lh-base">
                   {cuestion?.questionSentenceArr
                     ? cuestion?.questionSentenceArr[0]
@@ -41,7 +42,7 @@ const Quiz = () => {
                     textAlign: "right",
                   }}
                 >
-                  {cuestionIndex} / {quizs?.length}
+                  {cuestionIndex} / {round?.cuestions?.length}
                 </h5>
               </div>
               <div>
@@ -72,7 +73,7 @@ const Quiz = () => {
                 )}
               </div>
 
-              {cuestionIndex + 1 !== quizs.length ? (
+              {cuestionIndex + 1 !== round?.cuestions?.length ? (
                 <button
                   className="btn py-2 w-100 mt-3 bg-primary text-light fw-bold"
                   onClick={() => {

@@ -3,7 +3,7 @@ import { createContext, useState, useEffect } from "react";
 const DataContext = createContext({});
 
 export const DataProvider = ({ children }) => {
-  const [quizs, setQuizs] = useState([]);
+  const [round, setRound] = useState();
   const [cuestion, setCuestion] = useState({});
   const [cuestionIndex, setCuestionIndex] = useState(0);
   const [correctAnswers, setCorrectAnswers] = useState("");
@@ -12,27 +12,29 @@ export const DataProvider = ({ children }) => {
 
   // Display Controlling States
   const [showStart, setShowStart] = useState(true);
-  const [showQuiz, setShowQuiz] = useState(false);
+  const [showRound, setShowRound] = useState(false);
   const [showResult, setShowResult] = useState(false);
 
   // Load JSON Data
   useEffect(() => {
-    fetch("quiz.json")
+    fetch("data/quiz01.json")
       .then((res) => res.json())
-      .then((data) => setQuizs(data));
+      .then((data) => {
+        setRound(data);
+      });
   }, []);
 
   // Set a Single Cuestion
   useEffect(() => {
-    if (quizs.length > cuestionIndex) {
-      setCuestion(quizs[cuestionIndex]);
+    if (round?.cuestions?.length > cuestionIndex) {
+      setCuestion(round.cuestions[cuestionIndex]);
     }
-  }, [quizs, cuestionIndex]);
+  }, [round, cuestionIndex]);
 
   // Start Quiz
   const startQuiz = () => {
     setShowStart(false);
-    setShowQuiz(true);
+    setShowRound(true);
   };
 
   const stripSentence = (s) => {
@@ -83,14 +85,14 @@ export const DataProvider = ({ children }) => {
   const showTheResult = () => {
     setShowResult(true);
     setShowStart(false);
-    setShowQuiz(false);
+    setShowRound(false);
   };
 
   // Start Over
   const startOver = () => {
     setShowStart(false);
     setShowResult(false);
-    setShowQuiz(true);
+    setShowRound(true);
     setCorrectAnswers([]);
     setSelectedAnswer("");
     setCuestionIndex(0);
@@ -105,9 +107,9 @@ export const DataProvider = ({ children }) => {
       value={{
         startQuiz,
         showStart,
-        showQuiz,
+        showRound,
         cuestion,
-        quizs,
+        round,
         checkAnswer,
         correctAnswers,
         selectedAnswer,
