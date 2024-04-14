@@ -48,7 +48,7 @@ export const DataProvider = ({ children }) => {
 
       if (isCorrect) {
         event.target.classList.add("bg-success");
-        setMarks(marks + 5);
+        setMarks(marks + 10);
       } else {
         event.target.classList.add("bg-danger");
       }
