@@ -1,4 +1,6 @@
 import { createContext, useState, useEffect } from "react";
+const dataU = require("../utils/dataUtils.js");
+const dispU = require("../utils/displayUtils.js");
 
 const DataContext = createContext({});
 
@@ -20,9 +22,7 @@ export const DataProvider = ({ children }) => {
 
   // Set a Single Cuestion
   useEffect(() => {
-    if (round?.cuestions?.length > cuestionIndex + 1) {
-      setCuestion(round.cuestions[cuestionIndex]);
-    }
+    setCuestion(round?.cuestions[cuestionIndex]);
   }, [round, cuestionIndex]);
 
   // Start Quiz
@@ -36,25 +36,9 @@ export const DataProvider = ({ children }) => {
       });
   };
 
-  const stripSentence = (s) => {
-    return s
-      ? s
-          .toLowerCase()
-          .split("")
-          .filter((char) => /\p{Script=Latin}/u.test(char))
-          .join("")
-      : "";
-  };
-
-  const validateAnswer = (correctArr, proposedStr) => {
-    correctArr = correctArr.map((c) => stripSentence(c));
-    proposedStr = stripSentence(proposedStr);
-    return correctArr.includes(proposedStr);
-  };
-
   // Check Answer
   const checkAnswer = (event, selected) => {
-    let isCorrect = validateAnswer(cuestion.answerSentenceArr, selected);
+    let isCorrect = dataU.validateAnswer(cuestion.answerSentenceArr, selected);
     cuestion["yourAnswer"] = selected;
     cuestion["youWereCorrect"] = isCorrect;
 
@@ -73,7 +57,7 @@ export const DataProvider = ({ children }) => {
 
   // Next Cuestion
   const moveForward = () => {
-    if (round.cuestions.length - 1 === cuestionIndex) {
+    if (dispU.isLastQ(round, cuestionIndex)) {
       // End quiz
       setShowResult(true);
       setShowStart(false);
@@ -86,7 +70,7 @@ export const DataProvider = ({ children }) => {
       wrongBtn?.classList.remove("bg-danger");
       const rightBtn = document.querySelector("button.bg-success");
       rightBtn?.classList.remove("bg-success");
-      setCuestionIndex(cuestionIndex + 1);
+      setCuestionIndex((prev) => prev + 1);
     }
   };
 

@@ -1,5 +1,7 @@
 import React, { useContext, useState } from "react";
 import DataContext from "../context/dataContext";
+const dataU = require("../utils/dataUtils.js");
+const dispU = require("../utils/displayUtils.js");
 
 const Quiz = () => {
   const {
@@ -18,6 +20,7 @@ const Quiz = () => {
     setPlayerInput("");
     moveForward();
   };
+  const cuestionIsFinished = correctAnswers?.length;
 
   return (
     <section
@@ -54,7 +57,7 @@ const Quiz = () => {
                 <form>
                   <input
                     onChange={(e) => {
-                      if (correctAnswers?.length) {
+                      if (cuestionIsFinished) {
                         return;
                       }
                       setPlayerInput(e.target.value);
@@ -69,7 +72,7 @@ const Quiz = () => {
                     disabled={!playerInput}
                     onClick={(event) => {
                       event.preventDefault();
-                      if (correctAnswers?.length) {
+                      if (cuestionIsFinished) {
                         wrapperMoveForward();
                       }
                       if (playerInput) {
@@ -80,24 +83,16 @@ const Quiz = () => {
                     Submit
                   </button>
                 </form>
-                {cuestionIndex + 1 < round?.cuestions?.length ? (
-                  <button
-                    className="btn py-2 w-100 mt-3 bg-primary text-light fw-bold"
-                    onClick={wrapperMoveForward}
-                    disabled={!selectedAnswer}
-                  >
-                    Next Cuestion
-                  </button>
-                ) : (
-                  <button
-                    className="btn py-2 w-100 mt-3 bg-primary text-light fw-bold"
-                    onClick={wrapperMoveForward}
-                    disabled={!selectedAnswer}
-                  >
-                    Show Result
-                  </button>
-                )}
-                {correctAnswers?.length ? (
+                <button
+                  className="btn py-2 w-100 mt-3 bg-primary text-light fw-bold"
+                  onClick={wrapperMoveForward}
+                  disabled={!selectedAnswer}
+                >
+                  {dispU.isLastQ(round, cuestionIndex)
+                    ? "End Quiz"
+                    : "Next Cuestion"}
+                </button>
+                {cuestionIsFinished ? (
                   <div
                     className={`option w-100 text-start btn text-white py-2 px-3 mt-3 rounded btn-dark`} //${correctAnswer === item && "bg-success"}
                   >
