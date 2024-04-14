@@ -8,10 +8,6 @@
     {
       "questionSentenceArr": ["Who was the drummer of Nirvana?"],
       "answerSentenceArr": ["Dave Grohl."]
-    },
-    {
-      "questionSentenceArr": ["Keith Moon was the drummer for which band?"],
-      "answerSentenceArr": ["The Who."]
     }
   ]
 }

@@ -64,9 +64,11 @@ const Quiz = () => {
                   <div
                     className={`option w-100 text-start btn text-white py-2 px-3 mt-3 rounded btn-dark`} //${correctAnswer === item && "bg-success"}
                   >
-                    {cuestion?.answerSentenceArr.map((ansSent) => (
-                      <p>{ansSent}</p>
-                    ))}
+                    {cuestion?.answerSentenceArr.map(
+                      (ansSent, ansSentIndex) => (
+                        <p key={`ansSent-${ansSentIndex}`}>{ansSent}</p>
+                      )
+                    )}
                   </div>
                 ) : (
                   ""

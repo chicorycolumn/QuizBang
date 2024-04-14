@@ -56,6 +56,8 @@ export const DataProvider = ({ children }) => {
   // Check Answer
   const checkAnswer = (event, selected) => {
     let isCorrect = validateAnswer(cuestion.answerSentenceArr, selected);
+    cuestion["yourAnswer"] = selected;
+    cuestion["youWereCorrect"] = isCorrect;
 
     if (!selectedAnswer) {
       setCorrectAnswers(cuestion.answerSentenceArr);

@@ -34,6 +34,22 @@ const Result = () => {
                 >
                   Start Over
                 </button>
+
+                {round?.cuestions.map((cuestion, cuestionIndex) => (
+                  <div key={`cuestion-${cuestionIndex}`}>
+                    <h5 className="mb-2 fs-normal lh-base">{`${
+                      cuestion.youWereCorrect ? "✓" : "✗"
+                    } ${cuestionIndex + 1}/${round.cuestions.length} ${
+                      cuestion.questionSentenceArr[0]
+                    }`}</h5>
+                    <h6 className="mb-2 fs-normal lh-base">Correct answers:</h6>
+                    {cuestion.answerSentenceArr.map((corrAns, corrAnsIndex) => (
+                      <p key={`corrAns-${corrAnsIndex}`}>{corrAns}</p>
+                    ))}
+                    <h6 className="mb-2 fs-normal lh-base">Your answer:</h6>
+                    <p>{cuestion.yourAnswer}</p>
+                  </div>
+                ))}
               </div>
             </div>
           </div>
