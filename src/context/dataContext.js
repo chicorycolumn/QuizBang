@@ -16,13 +16,7 @@ export const DataProvider = ({ children }) => {
   const [showResult, setShowResult] = useState(false);
 
   // Load JSON Data
-  useEffect(() => {
-    fetch("data/quiz01.json")
-      .then((res) => res.json())
-      .then((data) => {
-        setRound(data);
-      });
-  }, []);
+  useEffect(() => {}, []);
 
   // Set a Single Cuestion
   useEffect(() => {
@@ -32,9 +26,14 @@ export const DataProvider = ({ children }) => {
   }, [round, cuestionIndex]);
 
   // Start Quiz
-  const startQuiz = () => {
-    setShowStart(false);
-    setShowRound(true);
+  const startQuiz = (filename) => {
+    fetch(`data/${filename}.json`)
+      .then((res) => res.json())
+      .then((data) => {
+        setRound(data);
+        setShowStart(false);
+        setShowRound(true);
+      });
   };
 
   const stripSentence = (s) => {

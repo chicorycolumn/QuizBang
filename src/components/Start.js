@@ -1,9 +1,15 @@
 import React, { useContext } from "react";
 import DataContext from "../context/dataContext";
 import mainLogo from "../logo192.png";
+var context = require.context("../../public/data", true);
 
 const Start = () => {
   const { startQuiz, showStart } = useContext(DataContext);
+  let roundNames = context
+    .keys()
+    .filter((k) => !k.includes("json"))
+    .map((k) => k.slice(2));
+
   return (
     <section
       className="text-white text-center bg-dark"
@@ -14,12 +20,19 @@ const Start = () => {
           <div className="col-lg-8 pb-5">
             <img src={mainLogo} alt="Lingfinity logo" className="w-25" />
             <h1 className="fw-bold mb-4">Lingfinity</h1>
-            <button
-              onClick={startQuiz}
-              className="btn px-4 py-2 bg-light text-dark fw-bold"
-            >
-              Start Quiz
-            </button>
+
+            <div className="row align-items-center justify-content-center">
+              {roundNames.map((roundName) => (
+                <button
+                  onClick={() => {
+                    startQuiz(roundName);
+                  }}
+                  className="btn px-4 py-2 bg-light text-dark fw-bold"
+                >
+                  {roundName}
+                </button>
+              ))}
+            </div>
           </div>
         </div>
       </div>
