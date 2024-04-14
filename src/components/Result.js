@@ -2,7 +2,7 @@ import React, { useContext } from "react";
 import DataContext from "../context/dataContext";
 
 const Result = () => {
-  const { showResult, round, marks, startOver } = useContext(DataContext);
+  const { showResult, round, marks, returnToStart } = useContext(DataContext);
   return (
     <section
       className="bg-dark text-white"
@@ -28,18 +28,21 @@ const Result = () => {
                   Your score is {marks} out of {round.cuestions.length * 5}
                 </h3>
 
-                <button
-                  onClick={startOver}
-                  className="btn py-2 px-4 btn-light fw-bold d-inline"
-                >
-                  Start Over
-                </button>
+                <form>
+                  <button
+                    type="submit"
+                    onClick={returnToStart}
+                    className="btn py-2 px-4 btn-light fw-bold d-inline"
+                  >
+                    Return to Main Menu
+                  </button>
+                </form>
 
-                {round?.cuestions.map((cuestion, cuestionIndex) => (
-                  <div className="mt-5" key={`cuestion-${cuestionIndex}`}>
+                {round?.cuestions.map((cuestion, cuestIndex) => (
+                  <div className="mt-5" key={`cuestion-${cuestIndex}`}>
                     <h5 className="mb-2 fs-normal lh-base">{`${
                       cuestion.youWereCorrect ? "✓" : "✗"
-                    } ${cuestionIndex + 1}/${round.cuestions.length} ${
+                    } ${cuestIndex + 1}/${round.cuestions.length} ${
                       cuestion.questionSentenceArr[0]
                     }`}</h5>
                     <h6 className="mb-2 fs-normal lh-base">Your answer:</h6>

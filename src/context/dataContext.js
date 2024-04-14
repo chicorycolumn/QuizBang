@@ -20,7 +20,7 @@ export const DataProvider = ({ children }) => {
 
   // Set a Single Cuestion
   useEffect(() => {
-    if (round?.cuestions?.length > cuestionIndex) {
+    if (round?.cuestions?.length > cuestionIndex + 1) {
       setCuestion(round.cuestions[cuestionIndex]);
     }
   }, [round, cuestionIndex]);
@@ -72,28 +72,30 @@ export const DataProvider = ({ children }) => {
   };
 
   // Next Cuestion
-  const nextCuestion = () => {
-    setCorrectAnswers([]);
-    setSelectedAnswer("");
-    const wrongBtn = document.querySelector("button.bg-danger");
-    wrongBtn?.classList.remove("bg-danger");
-    const rightBtn = document.querySelector("button.bg-success");
-    rightBtn?.classList.remove("bg-success");
-    setCuestionIndex(cuestionIndex + 1);
-  };
-
-  // Show Result
-  const showTheResult = () => {
-    setShowResult(true);
-    setShowStart(false);
-    setShowRound(false);
+  const moveForward = () => {
+    if (round.cuestions.length - 1 === cuestionIndex) {
+      // End quiz
+      setShowResult(true);
+      setShowStart(false);
+      setShowRound(false);
+    } else {
+      // Go to next cuestion
+      setCorrectAnswers([]);
+      setSelectedAnswer("");
+      const wrongBtn = document.querySelector("button.bg-danger");
+      wrongBtn?.classList.remove("bg-danger");
+      const rightBtn = document.querySelector("button.bg-success");
+      rightBtn?.classList.remove("bg-success");
+      setCuestionIndex(cuestionIndex + 1);
+    }
   };
 
   // Start Over
-  const startOver = () => {
-    setShowStart(false);
+  const returnToStart = () => {
+    setRound();
+    setShowStart(true);
     setShowResult(false);
-    setShowRound(true);
+    setShowRound(false);
     setCorrectAnswers([]);
     setSelectedAnswer("");
     setCuestionIndex(0);
@@ -103,6 +105,7 @@ export const DataProvider = ({ children }) => {
     const rightBtn = document.querySelector("button.bg-success");
     rightBtn?.classList.remove("bg-success");
   };
+
   return (
     <DataContext.Provider
       value={{
@@ -115,11 +118,10 @@ export const DataProvider = ({ children }) => {
         correctAnswers,
         selectedAnswer,
         cuestionIndex,
-        nextCuestion,
-        showTheResult,
+        moveForward,
         showResult,
         marks,
-        startOver,
+        returnToStart,
       }}
     >
       {children}

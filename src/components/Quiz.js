@@ -10,11 +10,14 @@ const Quiz = () => {
     correctAnswers,
     selectedAnswer,
     cuestionIndex,
-    nextCuestion,
-    showTheResult,
+    moveForward,
   } = useContext(DataContext);
 
   const [playerInput, setPlayerInput] = useState("");
+  const wrapperMoveForward = () => {
+    setPlayerInput("");
+    moveForward();
+  };
 
   return (
     <section
@@ -44,31 +47,43 @@ const Quiz = () => {
                     textAlign: "right",
                   }}
                 >
-                  {cuestionIndex} / {round?.cuestions?.length}
+                  {cuestionIndex + 1} / {round?.cuestions?.length}
                 </h5>
               </div>
               <div>
-                <input
-                  onChange={(e) => {
-                    setPlayerInput(e.target.value);
-                  }}
-                  value={playerInput}
-                  placeholder="Type your answer..."
-                  className={`option w-100 text-start btn text-white py-2 px-3 mt-3 rounded btn-dark`} //${correctAnswer === item && "bg-success"}
-                ></input>
-                <button
-                  className={`option w-100 text-start btn text-white py-2 px-3 mt-3 rounded btn-dark`}
-                  onClick={(event) => checkAnswer(event, playerInput)}
-                >
-                  Submit
-                </button>
-                {cuestionIndex + 1 !== round?.cuestions?.length ? (
+                <form>
+                  <input
+                    onChange={(e) => {
+                      if (correctAnswers?.length) {
+                        return;
+                      }
+                      setPlayerInput(e.target.value);
+                    }}
+                    value={playerInput}
+                    placeholder="Type your answer..."
+                    className={`option w-100 text-start btn text-white py-2 px-3 mt-3 rounded btn-dark`} //${correctAnswer === item && "bg-success"}
+                  ></input>
+                  <button
+                    type="submit"
+                    className={`option w-100 text-start btn text-white py-2 px-3 mt-3 rounded btn-dark`}
+                    disabled={!playerInput}
+                    onClick={(event) => {
+                      event.preventDefault();
+                      if (correctAnswers?.length) {
+                        wrapperMoveForward();
+                      }
+                      if (playerInput) {
+                        checkAnswer(event, playerInput);
+                      }
+                    }}
+                  >
+                    Submit
+                  </button>
+                </form>
+                {cuestionIndex + 1 < round?.cuestions?.length ? (
                   <button
                     className="btn py-2 w-100 mt-3 bg-primary text-light fw-bold"
-                    onClick={() => {
-                      setPlayerInput("");
-                      nextCuestion();
-                    }}
+                    onClick={wrapperMoveForward}
                     disabled={!selectedAnswer}
                   >
                     Next Cuestion
@@ -76,7 +91,7 @@ const Quiz = () => {
                 ) : (
                   <button
                     className="btn py-2 w-100 mt-3 bg-primary text-light fw-bold"
-                    onClick={showTheResult}
+                    onClick={wrapperMoveForward}
                     disabled={!selectedAnswer}
                   >
                     Show Result

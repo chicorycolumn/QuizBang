@@ -21,9 +21,10 @@ const Start = () => {
             <img src={mainLogo} alt="Lingfinity logo" className="w-25" />
             <h1 className="fw-bold mb-4">Lingfinity</h1>
 
-            <div className="border border-primary row align-items-center justify-content-center">
-              {roundNames.map((roundName) => (
+            <div className="row align-items-center justify-content-center">
+              {roundNames.map((roundName, roundNameIndex) => (
                 <button
+                  key={`roundName-${roundNameIndex}`}
                   onClick={() => {
                     startQuiz(roundName);
                   }}
