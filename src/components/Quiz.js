@@ -1,4 +1,4 @@
-import React, { useContext, useState } from "react";
+import React, { useContext, useState, useEffect } from "react";
 import DataContext from "../context/dataContext";
 const dataU = require("../utils/dataUtils.js");
 const dispU = require("../utils/displayUtils.js");
@@ -14,6 +14,12 @@ const Quiz = () => {
     cuestionIndex,
     moveForward,
   } = useContext(DataContext);
+
+  useEffect(() => {
+    if (showRound) {
+      document.getElementById("text_input").focus();
+    }
+  }, [showRound, cuestionIndex]);
 
   const [playerInput, setPlayerInput] = useState("");
   const wrapperMoveForward = () => {
@@ -56,6 +62,8 @@ const Quiz = () => {
               <div>
                 <form>
                   <input
+                    id="text_input"
+                    type="text"
                     onChange={(e) => {
                       if (cuestionIsFinished) {
                         return;

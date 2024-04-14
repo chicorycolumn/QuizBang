@@ -1,14 +1,32 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect } from "react";
 import DataContext from "../context/dataContext";
 
 const Result = () => {
   const { showResult, round, marks, returnToStart } = useContext(DataContext);
+
+  useEffect(() => {
+    const listenForEnter = (event) => {
+      if (event.key === "Enter") {
+        event.preventDefault();
+        document.getElementById("return_to_main_menu_button").click();
+      }
+    };
+
+    if (showResult) {
+      document.addEventListener("keypress", listenForEnter);
+    }
+
+    return () => {
+      document.removeEventListener("keypress", listenForEnter);
+    };
+  }, [showResult]);
+
   return (
     <section
       className="bg-dark text-white"
       style={{ display: `${showResult ? "block" : "none"}` }}
     >
-      {round ? (
+      {showResult ? (
         <div className="container">
           <div className="row align-items-center justify-content-center">
             <div className="col-lg-6 pt-5 pb-5">
@@ -28,15 +46,14 @@ const Result = () => {
                   Your score is {marks} out of {round.cuestions.length * 5}
                 </h3>
 
-                <form>
-                  <button
-                    type="submit"
-                    onClick={returnToStart}
-                    className="btn py-2 px-4 btn-light fw-bold d-inline"
-                  >
-                    Return to Main Menu
-                  </button>
-                </form>
+                <button
+                  id="return_to_main_menu_button"
+                  type="submit"
+                  onClick={returnToStart}
+                  className="btn py-2 px-4 btn-light fw-bold d-inline"
+                >
+                  Return to Main Menu
+                </button>
 
                 {round?.cuestions.map((cuestion, cuestIndex) => (
                   <div className="mt-5" key={`cuestion-${cuestIndex}`}>
