@@ -10,8 +10,8 @@ const Result = () => {
     >
       {round ? (
         <div className="container">
-          <div className="row vh-100 align-items-center justify-content-center">
-            <div className="col-lg-6">
+          <div className="row align-items-center justify-content-center">
+            <div className="col-lg-6 pt-5 pb-5">
               <div
                 className={`text-light text-center p-5 rounded ${
                   marks > (round.cuestions.length * 5) / 2
@@ -36,18 +36,22 @@ const Result = () => {
                 </button>
 
                 {round?.cuestions.map((cuestion, cuestionIndex) => (
-                  <div key={`cuestion-${cuestionIndex}`}>
+                  <div className="mt-5" key={`cuestion-${cuestionIndex}`}>
                     <h5 className="mb-2 fs-normal lh-base">{`${
                       cuestion.youWereCorrect ? "✓" : "✗"
                     } ${cuestionIndex + 1}/${round.cuestions.length} ${
                       cuestion.questionSentenceArr[0]
                     }`}</h5>
-                    <h6 className="mb-2 fs-normal lh-base">Correct answers:</h6>
-                    {cuestion.answerSentenceArr.map((corrAns, corrAnsIndex) => (
-                      <p key={`corrAns-${corrAnsIndex}`}>{corrAns}</p>
-                    ))}
                     <h6 className="mb-2 fs-normal lh-base">Your answer:</h6>
-                    <p>{cuestion.yourAnswer}</p>
+                    <p className="m-0">{cuestion.yourAnswer}</p>
+                    <h6 className="mt-3 mb-2 fs-normal lh-base">
+                      Correct answers:
+                    </h6>
+                    {cuestion.answerSentenceArr.map((corrAns, corrAnsIndex) => (
+                      <p className="m-0" key={`corrAns-${corrAnsIndex}`}>
+                        {corrAns}
+                      </p>
+                    ))}
                   </div>
                 ))}
               </div>
