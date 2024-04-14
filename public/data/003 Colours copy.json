@@ -1,0 +1,13 @@
+{
+  "title": "Colours",
+  "cuestions": [
+    {
+      "questionSentenceArr": ["What colour is vermilion?"],
+      "answerSentenceArr": ["Red."]
+    },
+    {
+      "questionSentenceArr": ["What colour is cerulean?"],
+      "answerSentenceArr": ["Blue."]
+    }
+  ]
+}

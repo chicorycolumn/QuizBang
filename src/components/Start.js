@@ -16,18 +16,18 @@ const Start = () => {
       style={{ display: `${showStart ? "block" : "none"}` }}
     >
       <div className="container">
-        <div className="row vh-100 align-items-center justify-content-center">
-          <div className="col-lg-8 pb-5">
+        <div className="row align-items-center justify-content-center">
+          <div className="col-lg-8 pb-5 mt-5">
             <img src={mainLogo} alt="Lingfinity logo" className="w-25" />
             <h1 className="fw-bold mb-4">Lingfinity</h1>
 
-            <div className="row align-items-center justify-content-center">
+            <div className="border border-primary row align-items-center justify-content-center">
               {roundNames.map((roundName) => (
                 <button
                   onClick={() => {
                     startQuiz(roundName);
                   }}
-                  className="btn px-4 py-2 bg-light text-dark fw-bold"
+                  className="btn w-75 px-4 mb-1 py-2 bg-light text-dark fw-bold"
                 >
                   {roundName}
                 </button>

@@ -1,0 +1,13 @@
+{
+  "title": "Fruity",
+  "cuestions": [
+    {
+      "questionSentenceArr": ["Which fruity is a Granny Smith?"],
+      "answerSentenceArr": ["Appley."]
+    },
+    {
+      "questionSentenceArr": ["Which fruity is a Gros Michel?"],
+      "answerSentenceArr": ["Bananay."]
+    }
+  ]
+}

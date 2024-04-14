@@ -1,0 +1,13 @@
+{
+  "title": "Faruit",
+  "cuestions": [
+    {
+      "questionSentenceArr": ["Which faruit is a Granny Smith?"],
+      "answerSentenceArr": ["Aapple."]
+    },
+    {
+      "questionSentenceArr": ["Which faruit is a Gros Michel?"],
+      "answerSentenceArr": ["Baanana."]
+    }
+  ]
+}
