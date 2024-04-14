@@ -3,11 +3,10 @@ import { createContext, useState, useEffect } from "react";
 const DataContext = createContext({});
 
 export const DataProvider = ({ children }) => {
-  // All Quizs, Current Question, Index of Current Question, Answer, Selected Answer, Total Marks
   const [quizs, setQuizs] = useState([]);
-  const [question, setQuesion] = useState({});
-  const [questionIndex, setQuestionIndex] = useState(0);
-  const [correctAnswer, setCorrectAnswer] = useState("");
+  const [cuestion, setCuestion] = useState({});
+  const [cuestionIndex, setCuestionIndex] = useState(0);
+  const [correctAnswers, setCorrectAnswers] = useState("");
   const [selectedAnswer, setSelectedAnswer] = useState("");
   const [marks, setMarks] = useState(0);
 
@@ -23,12 +22,12 @@ export const DataProvider = ({ children }) => {
       .then((data) => setQuizs(data));
   }, []);
 
-  // Set a Single Question
+  // Set a Single Cuestion
   useEffect(() => {
-    if (quizs.length > questionIndex) {
-      setQuesion(quizs[questionIndex]);
+    if (quizs.length > cuestionIndex) {
+      setCuestion(quizs[cuestionIndex]);
     }
-  }, [quizs, questionIndex]);
+  }, [quizs, cuestionIndex]);
 
   // Start Quiz
   const startQuiz = () => {
@@ -46,19 +45,18 @@ export const DataProvider = ({ children }) => {
       : "";
   };
 
-  const validateAnswer = (correct, proposed) => {
-    correct = stripSentence(correct);
-    proposed = stripSentence(proposed);
-    console.log(44, correct, proposed);
-    return correct === proposed;
+  const validateAnswer = (correctArr, proposedStr) => {
+    correctArr = correctArr.map((c) => stripSentence(c));
+    proposedStr = stripSentence(proposedStr);
+    return correctArr.includes(proposedStr);
   };
 
   // Check Answer
   const checkAnswer = (event, selected) => {
-    let isCorrect = validateAnswer(question.answer, selected);
+    let isCorrect = validateAnswer(cuestion.answerSentenceArr, selected);
 
     if (!selectedAnswer) {
-      setCorrectAnswer(question.answer);
+      setCorrectAnswers(cuestion.answerSentenceArr);
       setSelectedAnswer(selected);
 
       if (isCorrect) {
@@ -70,15 +68,15 @@ export const DataProvider = ({ children }) => {
     }
   };
 
-  // Next Quesion
-  const nextQuestion = () => {
-    setCorrectAnswer("");
+  // Next Cuestion
+  const nextCuestion = () => {
+    setCorrectAnswers([]);
     setSelectedAnswer("");
     const wrongBtn = document.querySelector("button.bg-danger");
     wrongBtn?.classList.remove("bg-danger");
     const rightBtn = document.querySelector("button.bg-success");
     rightBtn?.classList.remove("bg-success");
-    setQuestionIndex(questionIndex + 1);
+    setCuestionIndex(cuestionIndex + 1);
   };
 
   // Show Result
@@ -93,9 +91,9 @@ export const DataProvider = ({ children }) => {
     setShowStart(false);
     setShowResult(false);
     setShowQuiz(true);
-    setCorrectAnswer("");
+    setCorrectAnswers([]);
     setSelectedAnswer("");
-    setQuestionIndex(0);
+    setCuestionIndex(0);
     setMarks(0);
     const wrongBtn = document.querySelector("button.bg-danger");
     wrongBtn?.classList.remove("bg-danger");
@@ -108,13 +106,13 @@ export const DataProvider = ({ children }) => {
         startQuiz,
         showStart,
         showQuiz,
-        question,
+        cuestion,
         quizs,
         checkAnswer,
-        correctAnswer,
+        correctAnswers,
         selectedAnswer,
-        questionIndex,
-        nextQuestion,
+        cuestionIndex,
+        nextCuestion,
         showTheResult,
         showResult,
         marks,

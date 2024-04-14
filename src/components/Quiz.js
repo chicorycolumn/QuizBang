@@ -4,13 +4,13 @@ import DataContext from "../context/dataContext";
 const Quiz = () => {
   const {
     showQuiz,
-    question,
+    cuestion,
     quizs,
     checkAnswer,
-    correctAnswer,
+    correctAnswers,
     selectedAnswer,
-    questionIndex,
-    nextQuestion,
+    cuestionIndex,
+    nextCuestion,
     showTheResult,
   } = useContext(DataContext);
 
@@ -29,7 +29,11 @@ const Quiz = () => {
               style={{ background: "#3d3d3d", borderColor: "#646464" }}
             >
               <div className="d-flex justify-content-between gap-md-3">
-                <h5 className="mb-2 fs-normal lh-base">{question?.question}</h5>
+                <h5 className="mb-2 fs-normal lh-base">
+                  {cuestion?.questionSentenceArr
+                    ? cuestion?.questionSentenceArr[0]
+                    : "nope"}
+                </h5>
                 <h5
                   style={{
                     color: "#60d600",
@@ -37,7 +41,7 @@ const Quiz = () => {
                     textAlign: "right",
                   }}
                 >
-                  {quizs.indexOf(question) + 1} / {quizs?.length}
+                  {cuestionIndex} / {quizs?.length}
                 </h5>
               </div>
               <div>
@@ -55,25 +59,29 @@ const Quiz = () => {
                 >
                   Submit
                 </button>
-                {correctAnswer && (
+                {correctAnswers?.length ? (
                   <div
                     className={`option w-100 text-start btn text-white py-2 px-3 mt-3 rounded btn-dark`} //${correctAnswer === item && "bg-success"}
                   >
-                    {question.answer}
+                    {cuestion?.answerSentenceArr.map((ansSent) => (
+                      <p>{ansSent}</p>
+                    ))}
                   </div>
+                ) : (
+                  ""
                 )}
               </div>
 
-              {questionIndex + 1 !== quizs.length ? (
+              {cuestionIndex + 1 !== quizs.length ? (
                 <button
                   className="btn py-2 w-100 mt-3 bg-primary text-light fw-bold"
                   onClick={() => {
                     setPlayerInput("");
-                    nextQuestion();
+                    nextCuestion();
                   }}
                   disabled={!selectedAnswer}
                 >
-                  Next Question
+                  Next Cuestion
                 </button>
               ) : (
                 <button

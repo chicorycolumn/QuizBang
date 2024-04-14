@@ -1,20 +1,14 @@
 [
   {
-    "id": "01",
-    "question": "What is the first name of the drummer in the Beatles?",
-    "options": [],
-    "answer": "Ringo."
+    "questionSentenceArr": ["Name a Beatle."],
+    "answerSentenceArr": ["Ringo.", "George.", "Paul.", "John."]
   },
   {
-    "id": "02",
-    "question": "Who was the drummer of Nirvana?",
-    "options": [],
-    "answer": "Dave Grohl."
+    "questionSentenceArr": ["Who was the drummer of Nirvana?"],
+    "answerSentenceArr": ["Dave Grohl."]
   },
   {
-    "id": "03",
-    "question": "Keith Moon was the drummer for which band?",
-    "options": [],
-    "answer": "The Who."
+    "questionSentenceArr": ["Keith Moon was the drummer for which band?"],
+    "answerSentenceArr": ["The Who."]
   }
 ]
