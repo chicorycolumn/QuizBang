@@ -14,7 +14,7 @@ export const makeCuestion = (quiz, previousDatum) => {
   if (!fieldsToTest || !fieldsToTest.length) {
     fieldsToTest = Object.keys(quiz.datums[0]);
   }
-  console.log(fieldsToTest);
+
   let fields = fieldsToTest.filter(
     (field) => datum[field] || datum[field] === 0
   );

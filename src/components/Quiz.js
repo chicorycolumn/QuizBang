@@ -128,7 +128,6 @@ const Quiz = () => {
                         wrapperMoveForward();
                       }
                       if (playerInput) {
-                        console.log(cuestion.answers);
                         let secondsElapsed =
                           Math.floor(((new Date() - startTime) / 1000) * 10) /
                           10;

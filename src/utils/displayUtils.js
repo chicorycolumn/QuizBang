@@ -5,7 +5,6 @@ export const getPutativeScore = (secondsElapsed) => {
     let penalty = 50;
     let penaltyMod = 5;
     for (let i = 0.6; i <= secondsElapsed; i += 0.1) {
-      // console.log({penalty})
       putativeScore = perfectScore - penalty;
       penalty += penaltyMod;
       penaltyMod -= 0.01;
@@ -18,6 +17,5 @@ export const getPutativeScore = (secondsElapsed) => {
     putativeScore = 10;
   }
   let calculatedScore = Math.floor(putativeScore);
-  console.log({ secondsElapsed, calculatedScore });
   return calculatedScore;
 };

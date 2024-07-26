@@ -11,6 +11,5 @@ const stripSentence = (s) => {
 export const validateAnswer = (correctArr, proposedStr) => {
   correctArr = correctArr.map((c) => stripSentence(c));
   proposedStr = stripSentence(proposedStr);
-  console.log({ correctArr, proposedStr });
   return correctArr.includes(proposedStr);
 };
