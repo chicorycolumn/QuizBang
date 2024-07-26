@@ -24,9 +24,9 @@ const Start = () => {
             className="lg-8 pb-1 pt-1 d-flex flex-column align-items-center"
             style={{ display: "block", height: "100%" }}
           >
-            <img src={mainLogo} alt="MemoryMagic logo" className="h-25" />
+            <img src={mainLogo} alt="QuizBang logo" className="h-25" />
             <h1 className="fw-bold mb-4 primarycolor sans-serif fst-italic">
-              MemoryMagic
+              QuizBang
             </h1>
 
             <div
