@@ -36,6 +36,32 @@ h3 {
 }
 
 .bg-primary,
+.bg-primarycolor,
 .btn-light {
   letter-spacing: 0.7px;
+}
+
+.bg-primarycolor {
+  background-color: fuchsia;
+}
+
+.bg-primarycolordark {
+  background-color: rgb(164, 0, 164);
+}
+
+.primarycolor {
+  color: fuchsia;
+}
+
+.primarycolordark {
+  color: rgb(164, 0, 164);
+}
+
+.shadow-primarycolor {
+  /* border-radius: 2%; */
+  box-shadow: 0px 0px 20px fuchsia;
+}
+
+.sans-serif {
+  font-family: Arial, Helvetica, sans-serif;
 }

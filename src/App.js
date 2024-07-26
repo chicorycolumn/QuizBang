@@ -1,7 +1,6 @@
 import React from "react";
 import Start from "./components/Start";
 import Quiz from "./components/Quiz";
-import Result from "./components/Result";
 import { DataProvider } from "./context/dataContext";
 
 function App() {
@@ -12,9 +11,6 @@ function App() {
 
       {/* Quiz Page */}
       <Quiz />
-
-      {/* Result Page */}
-      <Result />
     </DataProvider>
   );
 }

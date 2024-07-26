@@ -1,6 +1,7 @@
 import { createContext, useState, useEffect } from "react";
 const dataU = require("../utils/dataUtils.js");
 const dispU = require("../utils/displayUtils.js");
+const quizU = require("../utils/quizUtils.js");
 
 const DataContext = createContext({});
 
@@ -10,19 +11,24 @@ export const DataProvider = ({ children }) => {
   const [cuestionIndex, setCuestionIndex] = useState(0);
   const [correctAnswers, setCorrectAnswers] = useState("");
   const [selectedAnswer, setSelectedAnswer] = useState("");
-  const [marks, setMarks] = useState(0);
+  const [score, setScore] = useState(0);
+  const [scoreJustReceived, setScoreJustReceived] = useState(0);
 
   // Display Controlling States
   const [showStart, setShowStart] = useState(true);
   const [showRound, setShowRound] = useState(false);
-  const [showResult, setShowResult] = useState(false);
 
   // Load JSON Data
   useEffect(() => {}, []);
 
   // Set a Single Cuestion
   useEffect(() => {
-    setCuestion(round?.cuestions[cuestionIndex]);
+    setCuestion((prevCuestion) => {
+      if (round) {
+        let newCuestion = quizU.makeCuestion(round, prevCuestion?.datum);
+        return newCuestion;
+      }
+    });
   }, [round, cuestionIndex]);
 
   // Start Quiz
@@ -37,53 +43,42 @@ export const DataProvider = ({ children }) => {
   };
 
   // Check Answer
-  const checkAnswer = (event, selected) => {
-    let isCorrect = dataU.validateAnswer(cuestion.answerSentenceArr, selected);
+  const checkAnswer = (event, selected, putativeScore) => {
+    let answers = cuestion.answers;
+
+    let isCorrect = dataU.validateAnswer(answers, selected);
     cuestion["yourAnswer"] = selected;
     cuestion["youWereCorrect"] = isCorrect;
 
     if (!selectedAnswer) {
-      setCorrectAnswers(cuestion.answerSentenceArr);
+      setCorrectAnswers(answers);
       setSelectedAnswer(selected);
 
       if (isCorrect) {
-        event.target.classList.add("bg-success");
-        setMarks(marks + 10);
-      } else {
-        event.target.classList.add("bg-danger");
+        setScoreJustReceived(putativeScore);
+        setScore((prev) => prev + putativeScore);
       }
     }
   };
 
   // Next Cuestion
   const moveForward = () => {
-    if (dispU.isLastQ(round, cuestionIndex)) {
-      // End quiz
-      setShowResult(true);
-      setShowStart(false);
-      setShowRound(false);
-    } else {
-      // Go to next cuestion
-      setCorrectAnswers([]);
-      setSelectedAnswer("");
-      const wrongBtn = document.querySelector("button.bg-danger");
-      wrongBtn?.classList.remove("bg-danger");
-      const rightBtn = document.querySelector("button.bg-success");
-      rightBtn?.classList.remove("bg-success");
-      setCuestionIndex((prev) => prev + 1);
-    }
+    // Go to next cuestion
+    setCorrectAnswers([]);
+    setScoreJustReceived(0);
+    setSelectedAnswer("");
+    setCuestionIndex((prev) => prev + 1);
   };
 
   // Start Over
   const returnToStart = () => {
     setRound();
     setShowStart(true);
-    setShowResult(false);
     setShowRound(false);
     setCorrectAnswers([]);
     setSelectedAnswer("");
     setCuestionIndex(0);
-    setMarks(0);
+    setScore(0);
     const wrongBtn = document.querySelector("button.bg-danger");
     wrongBtn?.classList.remove("bg-danger");
     const rightBtn = document.querySelector("button.bg-success");
@@ -103,9 +98,9 @@ export const DataProvider = ({ children }) => {
         selectedAnswer,
         cuestionIndex,
         moveForward,
-        showResult,
-        marks,
+        score,
         returnToStart,
+        scoreJustReceived,
       }}
     >
       {children}
