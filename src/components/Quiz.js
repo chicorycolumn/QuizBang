@@ -1,6 +1,5 @@
 import React, { useContext, useState, useEffect } from "react";
 import DataContext from "../context/dataContext";
-const dataU = require("../utils/dataUtils.js");
 const dispU = require("../utils/displayUtils.js");
 
 const Quiz = () => {
@@ -12,7 +11,7 @@ const Quiz = () => {
     scoreJustReceived,
     checkAnswer,
     correctAnswers,
-    selectedAnswer,
+    // selectedAnswer,
     cuestionIndex,
     moveForward,
     returnToStart,

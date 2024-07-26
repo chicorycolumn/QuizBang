@@ -1,6 +1,5 @@
 import { createContext, useState, useEffect } from "react";
 const dataU = require("../utils/dataUtils.js");
-const dispU = require("../utils/displayUtils.js");
 const quizU = require("../utils/quizUtils.js");
 
 const DataContext = createContext({});
