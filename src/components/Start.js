@@ -1,6 +1,6 @@
 import React, { useContext } from "react";
 import DataContext from "../context/dataContext";
-import mainLogo from "../logo192.png";
+import mainLogo from ".././logo_192.png";
 var context = require.context("../../public/data", true);
 
 const Start = () => {
@@ -18,8 +18,8 @@ const Start = () => {
       <div className="container">
         <div className="row align-items-center justify-content-center">
           <div className="col-lg-8 pb-5 mt-5">
-            <img src={mainLogo} alt="Lingfinity logo" className="w-25" />
-            <h1 className="fw-bold mb-4">Lingfinity</h1>
+            <img src={mainLogo} alt="MemoryMagic logo" className="w-25" />
+            <h1 className="fw-bold mb-4">MemoryMagic</h1>
 
             <div className="row align-items-center justify-content-center">
               {roundNames.map((roundName, roundNameIndex) => (
