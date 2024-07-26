@@ -57,6 +57,7 @@ const Quiz = () => {
                         "Are you sure you want to exit? Your score will be reset."
                       )
                     ) {
+                      setPlayerInput("");
                       returnToStart();
                     }
                   }}

@@ -2,9 +2,8 @@ const stripSentence = (s) => {
   return s
     ? s
         .toLowerCase()
-        .split("")
-        // .filter((char) => /\p{Script=Latin}/u.test(char))
-        .join("")
+        // .split("").filter((char) => /\p{Script=Latin}/u.test(char)).join("")
+        .trim()
     : "";
 };
 
