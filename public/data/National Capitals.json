@@ -13,391 +13,465 @@
       "capital": "Naypyidaw",
       "country/territory": "Myanmar",
       "continent": "Asia",
-      "notes": "Yangon was the capital until 2006.[13] See also: List of capitals of Myanmar."
+      "notes": ["Yangon was the capital until 2006."]
     },
     {
       "capital": "Colombo (executive, judicial)",
       "country/territory": "Sri Lanka",
       "continent": "Asia",
-      "notes": "Until the 1982, the capital was Colombo, where many governmental institutions still remain, and which is still designated as the commercial capital of Sri Lanka. See also: Capital of Sri Lanka."
+      "notes": [
+        "Until the 1982, the capital was Colombo, where many governmental institutions still remain, and which is still designated as the commercial capital of Sri Lanka."
+      ]
     },
     {
       "capital": "Prague",
       "country/territory": "Czech Republic",
       "continent": "Europe",
-      "notes": "The Supreme Court of the Czech Republic is located in Brno.[14]"
+      "notes": ["The Supreme Court of the Czech Republic is located in Brno."]
     },
     {
       "capital": "Laayoune (declared)",
       "country/territory": "Western Sahara",
       "continent": "Africa",
-      "notes": "The Sahrawi Arab Democratic Republic (SADR), recognized by 84 UN member states and South Ossetia, claims the mostly Moroccan-controlled Western Sahara. Moroccan-controlled territory includes Laayoune, and Morocco claims all Sahrawi-controlled territory. Tifariti is the current temporary capital of the SADR (formerly Bir Lehlou). Some government and military structures reside in exile in Tindouf, Algeria.[7] See also: Politics of the Sahrawi Arab Democratic Republic."
+      "notes": [
+        "The Sahrawi Arab Democratic Republic (SADR), recognized by 84 UN member states and South Ossetia, claims the mostly Moroccan-controlled Western Sahara. Moroccan-controlled territory includes Laayoune, and Morocco claims all Sahrawi-controlled territory. Tifariti is the current temporary capital of the SADR (formerly Bir Lehlou). Some government and military structures reside in exile in Tindouf, Algeria."
+      ]
     },
     {
       "capital": "Tifariti (de facto)",
       "country/territory": "Western Sahara",
       "continent": "Africa",
-      "notes": "The Sahrawi Arab Democratic Republic (SADR), recognized by 84 UN member states and South Ossetia, claims the mostly Moroccan-controlled Western Sahara. Moroccan-controlled territory includes Laayoune, and Morocco claims all Sahrawi-controlled territory. Tifariti is the current temporary capital of the SADR (formerly Bir Lehlou). Some government and military structures reside in exile in Tindouf, Algeria.[7] See also: Politics of the Sahrawi Arab Democratic Republic."
+      "notes": [
+        "The Sahrawi Arab Democratic Republic (SADR), recognized by 84 UN member states and South Ossetia, claims the mostly Moroccan-controlled Western Sahara. Moroccan-controlled territory includes Laayoune, and Morocco claims all Sahrawi-controlled territory. Tifariti is the current temporary capital of the SADR (formerly Bir Lehlou). Some government and military structures reside in exile in Tindouf, Algeria."
+      ]
     },
     {
       "capital": "Santiago",
       "country/territory": "Chile",
       "continent": "South America",
-      "notes": "The National Congress of Chile is located in ValparaÃ­so."
+      "notes": ["The National Congress of Chile is located in Valparaíso."]
     },
     {
       "capital": "Jerusalem",
       "country/territory": "Israel",
       "continent": "Asia",
-      "notes": "The Jerusalem Law states that \"Jerusalem, complete and united, is the capital of Israel\" and the city serves as the seat of the Israeli government and its institutions. United Nations Security Council Resolution 478 declared the Jerusalem Law \"null and void\" and called on member states to withdraw their diplomatic missions from Jerusalem. Most countries currently maintain their embassies in and around Tel Aviv. The United States recognized Jerusalem as the capital and moved its embassy there in May 2018.[4] Many countries officially adhere to the proposal that Jerusalem have international status, as called for in the 1947 Partition Plan.[5]"
+      "notes": [
+        "The Jerusalem Law states that \"Jerusalem, complete and united, is the capital of Israel\" and the city serves as the seat of the Israeli government and its institutions. United Nations Security Council Resolution 478 declared the Jerusalem Law \"null and void\" and called on member states to withdraw their diplomatic missions from Jerusalem. Most countries currently maintain their embassies in and around Tel Aviv. The United States recognized Jerusalem as the capital and moved its embassy there in May 2018. Many countries officially adhere to the proposal that Jerusalem have international status, as called for in the 1947 Partition Plan."
+      ]
     },
     {
       "capital": "Jerusalem",
       "country/territory": "Palestine",
       "continent": "Asia",
-      "notes": "The Jerusalem Law states that \"Jerusalem, complete and united, is the capital of Israel\" and the city serves as the seat of the Israeli government and its institutions. United Nations Security Council Resolution 478 declared the Jerusalem Law \"null and void\" and called on member states to withdraw their diplomatic missions from Jerusalem. Most countries currently maintain their embassies in and around Tel Aviv. The United States recognized Jerusalem as the capital and moved its embassy there in May 2018.[4] Many countries officially adhere to the proposal that Jerusalem have international status, as called for in the 1947 Partition Plan.[5]"
+      "notes": [
+        "The Jerusalem Law states that \"Jerusalem, complete and united, is the capital of Israel\" and the city serves as the seat of the Israeli government and its institutions. United Nations Security Council Resolution 478 declared the Jerusalem Law \"null and void\" and called on member states to withdraw their diplomatic missions from Jerusalem. Most countries currently maintain their embassies in and around Tel Aviv. The United States recognized Jerusalem as the capital and moved its embassy there in May 2018. Many countries officially adhere to the proposal that Jerusalem have international status, as called for in the 1947 Partition Plan."
+      ]
     },
     {
       "capital": "Ramallah (de facto)",
       "country/territory": "Palestine",
       "continent": "Asia",
-      "notes": "The Jerusalem Law states that \"Jerusalem, complete and united, is the capital of Israel\" and the city serves as the seat of the Israeli government and its institutions. United Nations Security Council Resolution 478 declared the Jerusalem Law \"null and void\" and called on member states to withdraw their diplomatic missions from Jerusalem. Most countries currently maintain their embassies in and around Tel Aviv. The United States recognized Jerusalem as the capital and moved its embassy there in May 2018.[4] Many countries officially adhere to the proposal that Jerusalem have international status, as called for in the 1947 Partition Plan.[5]"
+      "notes": [
+        "The Jerusalem Law states that \"Jerusalem, complete and united, is the capital of Israel\" and the city serves as the seat of the Israeli government and its institutions. United Nations Security Council Resolution 478 declared the Jerusalem Law \"null and void\" and called on member states to withdraw their diplomatic missions from Jerusalem. Most countries currently maintain their embassies in and around Tel Aviv. The United States recognized Jerusalem as the capital and moved its embassy there in May 2018. Many countries officially adhere to the proposal that Jerusalem have international status, as called for in the 1947 Partition Plan."
+      ]
     },
     {
       "capital": "Amsterdam (official)",
       "country/territory": "Netherlands//Holland",
       "continent": "Europe",
-      "notes": "The Dutch government is located in The Hague, which also hosts the monarch, government ministries, judiciary and diplomatic missions. See also: Capital of the Netherlands."
+      "notes": [
+        "The Dutch government is located in The Hague, which also hosts the monarch, government ministries, judiciary and diplomatic missions."
+      ]
     },
     {
       "capital": "The Hague (de facto)",
       "country/territory": "Netherlands//Holland",
       "continent": "Europe",
-      "notes": "The Dutch government is located in The Hague, which also hosts the monarch, government ministries, judiciary and diplomatic missions. See also: Capital of the Netherlands."
+      "notes": [
+        "The Dutch government is located in The Hague, which also hosts the monarch, government ministries, judiciary and diplomatic missions."
+      ]
     },
     {
       "capital": "Washington, D.C.",
       "country/territory": "United States//United States of America//USA",
       "continent": "North America",
-      "notes": "The capital of the United States has moved multiple times. See also: National capitals of the United States."
+      "notes": ["The capital of the United States has moved multiple times."]
     },
     {
       "capital": "South Tarawa",
       "country/territory": "Kiribati",
       "continent": "Oceania",
-      "notes": "South Tarawa is a settlement on the atoll of Tarawa."
+      "notes": ["South Tarawa is a settlement on the atoll of Tarawa."]
     },
     {
       "capital": "Wellington",
       "country/territory": "New Zealand",
       "continent": "Oceania",
-      "notes": "Since 1865. Wellington is New Zealand's third capital. See also: Capital of New Zealand."
+      "notes": ["Since 1865. Wellington is New Zealand's third capital."]
     },
     {
       "capital": "Majuro",
       "country/territory": "Marshall Islands",
       "continent": "Oceania",
-      "notes": "Self-governing in free association with the United States. The seat of government is at Delap-Uliga-Djarrit, a settlement on the atoll of Majuro."
+      "notes": [
+        "Self-governing in free association with the United States. The seat of government is at Delap-Uliga-Djarrit, a settlement on the atoll of Majuro."
+      ]
     },
     {
       "capital": "Ngerulmud",
       "country/territory": "Palau",
       "continent": "Oceania",
-      "notes": "Self-governing in free association with the United States. Koror City was the capital of Palau until 2006."
+      "notes": [
+        "Self-governing in free association with the United States. Koror City was the capital of Palau until 2006."
+      ]
     },
     {
       "capital": "Palikir",
       "country/territory": "Micronesia",
       "continent": "Oceania",
-      "notes": "Self-governing in free association with the United States. Kolonia is the former capital; and Australia, China, Japan and the United States retain embassies there."
+      "notes": [
+        "Self-governing in free association with the United States. Kolonia is the former capital; and Australia, China, Japan and the United States retain embassies there."
+      ]
     },
     {
       "capital": "Avarua",
       "country/territory": "Cook Islands",
       "continent": "Oceania",
-      "notes": "Self-governing in free association with New Zealand. The capital is sometimes incorrectly stated as Rarotonga, the island on which Avarua is located."
+      "notes": [
+        "Self-governing in free association with New Zealand. The capital is sometimes incorrectly stated as Rarotonga, the island on which Avarua is located."
+      ]
     },
     {
       "capital": "Alofi",
       "country/territory": "Niue",
       "continent": "Oceania",
-      "notes": "Self-governing in free association with New Zealand. Government offices are spread across both Alofi North and Alofi South."
+      "notes": [
+        "Self-governing in free association with New Zealand. Government offices are spread across both Alofi North and Alofi South."
+      ]
     },
     {
       "capital": "Hanoi",
       "country/territory": "Vietnam",
-      "continent": "Asia",
-      "notes": "See also: List of historical capitals of Vietnam."
+      "continent": "Asia"
     },
     {
       "capital": "Oslo",
       "country/territory": "Norway",
-      "continent": "Europe",
-      "notes": "See also: List of historical capitals of Norway."
+      "continent": "Europe"
     },
     {
       "capital": "Budapest",
       "country/territory": "Hungary",
-      "continent": "Europe",
-      "notes": "See also: List of historical capitals of Hungary."
+      "continent": "Europe"
     },
     {
       "capital": "Paris",
       "country/territory": "France",
-      "continent": "Europe",
-      "notes": "See also: List of Capitals of France."
+      "continent": "Europe"
     },
     {
       "capital": "Beijing",
       "country/territory": "China",
-      "continent": "Asia",
-      "notes": "See also: Historical capitals of China."
+      "continent": "Asia"
     },
     {
       "capital": "Tokyo",
       "country/territory": "Japan",
-      "continent": "Asia",
-      "notes": "See also: Capital of Japan."
+      "continent": "Asia"
     },
     {
-      "capital": "BrasÃ­lia",
+      "capital": "Brasília",
       "country/territory": "Brazil",
       "continent": "South America",
-      "notes": "Rio de Janeiro was the capital until 1960. See also: Capitals of Brazil."
+      "notes": ["Rio de Janeiro was the capital until 1960."]
     },
     {
       "capital": "London",
       "country/territory": "United Kingdom//UK",
       "continent": "Europe",
-      "notes": "Prior to the Acts of Union in 1707, London was the capital of England only; Edinburgh was the capital of the Kingdom of Scotland. The United Kingdom also includes the subdivisions of  England (capital London),  Scotland (capital Edinburgh),  Wales (capital Cardiff),  Northern Ireland (capital Belfast)."
+      "notes": [
+        "Prior to the Acts of Union in 1707, London was the capital of England only; Edinburgh was the capital of the Kingdom of Scotland. The United Kingdom also includes the subdivisions of  England (capital London),  Scotland (capital Edinburgh),  Wales (capital Cardiff),  Northern Ireland (capital Belfast)."
+      ]
     },
     {
       "capital": "Canberra",
       "country/territory": "Australia",
       "continent": "Oceania",
-      "notes": "Planned city built to overcome the rivalry between Melbourne (de facto capital at the time) and Sydney (economic capital and largest population center), which were both put forward as potential capitals for the nation in the Australasia Federation Conventions of the 1890s. Section 125 of the Constitution gives basic details about the location of the capital, size of the encompassing territory and so forth, while the Seat of Government Act 1908 specified its precise location."
+      "notes": [
+        "Planned city built to overcome the rivalry between Melbourne (de facto capital at the time) and Sydney (economic capital and largest population center), which were both put forward as potential capitals for the nation in the Australasia Federation Conventions of the 1890s. Section 125 of the Constitution gives basic details about the location of the capital, size of the encompassing territory and so forth, while the Seat of Government Act 1908 specified its precise location."
+      ]
     },
     {
       "capital": "Seoul",
       "country/territory": "South Korea",
       "continent": "Asia",
-      "notes": "On 2 July 2012, some functions of government moved to Sejong City, which became the de facto administrative capital of South Korea."
+      "notes": [
+        "On 2 July 2012, some functions of government moved to Sejong City, which became the de facto administrative capital of South Korea."
+      ]
     },
     {
       "capital": "Taipei",
       "country/territory": "Taiwan",
       "continent": "Asia",
-      "notes": "Officially the Republic of China, it has been competing for recognition with the People's Republic of China as the sole Chinese government since 1949. Taiwan controls the island of Taiwan and its associated islands, Quemoy, Matsu, the Pratas, and part of the Spratly Islands.[Note 1] Its territory is claimed in whole by the People's Republic of China.[Note 2] The Republic of China participates in the World Health Organization and a number of non-UN international organizations such as the World Trade Organization, the International Olympic Committee and others under a variety of pseudonyms, most commonly Chinese Taipei."
+      "notes": [
+        "Officially the Republic of China, it has been competing for recognition with the People's Republic of China as the sole Chinese government since 1949. Taiwan controls the island of Taiwan and its associated islands, Quemoy, Matsu, the Pratas, and part of the Spratly Islands.[Note 1] Its territory is claimed in whole by the People's Republic of China.[Note 2] The Republic of China participates in the World Health Organization and a number of non-UN international organizations such as the World Trade Organization, the International Olympic Committee and others under a variety of pseudonyms, most commonly Chinese Taipei."
+      ]
     },
     {
       "capital": "Nicosia",
-      "country/territory": "Cyprus",
+      "country/territory": "Cyprus//Northern Cyprus",
       "continent": "Asia",
-      "notes": "Nicosia is a divided capital, split between Cyprus, which claims the whole city, and the internationally unrecognized breakaway state of Northern Cyprus."
-    },
-    {
-      "capital": "Nicosia",
-      "country/territory": "Northern Cyprus",
-      "continent": "Asia",
-      "notes": "Nicosia is a divided capital, split between Cyprus, which claims the whole city, and the internationally unrecognized breakaway state of Northern Cyprus."
+      "notes": [
+        "Nicosia is a divided capital, split between Cyprus, which claims the whole city, and the internationally unrecognized breakaway state of Northern Cyprus."
+      ]
     },
     {
       "capital": "Yaren (de facto)",
       "country/territory": "Nauru",
       "continent": "Oceania",
-      "notes": "Nauru has no official capital; however, the government offices are in Yaren."
+      "notes": [
+        "Nauru has no official capital; however, the government offices are in Yaren."
+      ]
     },
     {
       "capital": "Abuja",
       "country/territory": "Nigeria",
       "continent": "Africa",
-      "notes": "Lagos was the capital from 1914 to 1991."
+      "notes": ["Lagos was the capital from 1914 to 1991."]
     },
     {
       "capital": "La Paz (administrative)",
       "country/territory": "Bolivia",
       "continent": "South America",
-      "notes": "La Paz is the highest administrative capital (3,650 m) in the world, higher than Quito.[6]"
+      "notes": [
+        "La Paz is the highest administrative capital (3,650 m) in the world, higher than Quito."
+      ]
     },
     {
       "capital": "New Delhi",
       "country/territory": "India",
       "continent": "Asia",
-      "notes": "Kolkata was the capital of India until 1911 during the British Raj."
+      "notes": [
+        "Kolkata was the capital of India until 1911 during the British Raj."
+      ]
     },
     {
       "capital": "Islamabad",
       "country/territory": "Pakistan",
       "continent": "Asia",
-      "notes": "Karachi was selected as the first capital of Pakistan and served as such from 1948 until the capital was shifted to Rawalpindi in 1958. Rawalpindi served as an interim capital for almost a decade until the construction of Islamabad was complete; the capital became Islamabad in 1967."
+      "notes": [
+        "Karachi was selected as the first capital of Pakistan and served as such from 1948 until the capital was shifted to Rawalpindi in 1958. Rawalpindi served as an interim capital for almost a decade until the construction of Islamabad was complete; the capital became Islamabad in 1967."
+      ]
     },
     {
       "capital": "Honiara",
       "country/territory": "Solomon Islands",
       "continent": "Oceania",
-      "notes": "Honiara is a settlement on the island of Guadalcanal."
+      "notes": ["Honiara is a settlement on the island of Guadalcanal."]
     },
     {
       "capital": "Quito",
       "country/territory": "Ecuador",
       "continent": "South America",
-      "notes": "Highest official capital (2,850 m).[6]"
+      "notes": ["Highest official capital (2,850 m)."]
     },
     {
       "capital": "Tbilisi",
       "country/territory": "Georgia",
       "continent": "Asia/Europe",
-      "notes": "From 2012 to 2018, Kutaisi served as Georgia's legislative capital. Additionally, Mtskheta is sometimes called an \"ancient capital\" of Georgia.[15][16]"
+      "notes": [
+        "From 2012 to 2018, Kutaisi served as Georgia's legislative capital. Additionally, Mtskheta is sometimes called an \"ancient capital\" of Georgia."
+      ]
     },
     {
       "capital": "Warsaw",
       "country/territory": "Poland",
       "continent": "Europe",
-      "notes": "Former capitals listed in: Template:Historical capitals of Poland."
+      "notes": [
+        "Former capitals listed in: Template:Historical capitals of Poland."
+      ]
     },
     {
       "capital": "Aden (de facto, temporary)",
       "country/territory": "Yemen",
       "continent": "Asia",
-      "notes": "Due to the Yemeni civil war (2014âpresent), Sanaa has been occupied by Houthi rebels since September 2014. Aden, the former capital of South Yemen, is Yemen's acting capital."
+      "notes": [
+        "Due to the Yemeni civil war (2014 - present), Sanaa has been occupied by Houthi rebels since September 2014. Aden, the former capital of South Yemen, is Yemen's acting capital."
+      ]
     },
     {
       "capital": "Sanaa (de jure)",
       "country/territory": "Yemen",
       "continent": "Asia",
-      "notes": "Due to the Yemeni civil war (2014âpresent), Sanaa has been occupied by Houthi rebels since September 2014. Aden, the former capital of South Yemen, is Yemen's acting capital."
+      "notes": [
+        "Due to the Yemeni civil war (2014 - present), Sanaa has been occupied by Houthi rebels since September 2014. Aden, the former capital of South Yemen, is Yemen's acting capital."
+      ]
     },
     {
       "capital": "Dodoma",
       "country/territory": "Tanzania",
       "continent": "Africa",
-      "notes": "Dar es Salaam, the former capital and largest city, continues to host some government ministries, the judiciary, and diplomatic missions."
+      "notes": [
+        "Dar es Salaam, the former capital and largest city, continues to host some government ministries, the judiciary, and diplomatic missions."
+      ]
     },
     {
       "capital": "Lima",
       "country/territory": "Peru",
       "continent": "South America",
-      "notes": "Cusco is declared the \"historical capital\" (Spanish: capital histÃ³rica), a merely symbolic statement, by Article 49 of the Peruvian Constitution. Arequipa is dubbed the \"legal capital\" of Peru for being the seat of the Constitutional Court."
+      "notes": [
+        "Cusco is declared the \"historical capital\" (Spanish: capital histórica), a merely symbolic statement, by Article 49 of the Peruvian Constitution. Arequipa is dubbed the \"legal capital\" of Peru for being the seat of the Constitutional Court."
+      ]
     },
     {
       "capital": "Tegucigalpa",
       "country/territory": "Honduras",
       "continent": "North America",
-      "notes": "ComayagÃ¼ela is declared in the Honduran Constitution as co-official capital with Tegucigalpa.[17] They have since merged into a single urban area."
+      "notes": [
+        "Comayagüela is declared in the Honduran Constitution as co-official capital with Tegucigalpa. They have since merged into a single urban area."
+      ]
     },
     {
-      "capital": "ComayagÃ¼ela",
+      "capital": "Comayagüela",
       "country/territory": "Honduras",
       "continent": "North America",
-      "notes": "ComayagÃ¼ela is declared in the Honduran Constitution as co-official capital with Tegucigalpa.[17] They have since merged into a single urban area."
+      "notes": [
+        "Comayagüela is declared in the Honduran Constitution as co-official capital with Tegucigalpa. They have since merged into a single urban area."
+      ]
     },
     {
       "capital": "Malabo",
       "country/territory": "Equatorial Guinea",
       "continent": "Africa",
-      "notes": "Ciudad de la Paz is currently under construction and will become the new capital when complete.[10]"
+      "notes": [
+        "Ciudad de la Paz is currently under construction and will become the new capital when complete."
+      ]
     },
     {
       "capital": "Monaco",
       "country/territory": "Monaco",
       "continent": "Europe",
-      "notes": "City-state. Monaco does not have an official capital designated in its constitution; however, the Commune of Monaco, the country's only commune, is coterminous with the nation, making it the de facto capital.[11][12]"
+      "notes": [
+        "City-state. Monaco does not have an official capital designated in its constitution; however, the Commune of Monaco, the country's only commune, is coterminous with the nation, making it the de facto capital."
+      ]
     },
     {
       "capital": "Singapore",
       "country/territory": "Singapore",
       "continent": "Asia",
-      "notes": "City-state."
+      "notes": ["City-state."]
     },
     {
       "capital": "Vatican City",
       "country/territory": "Vatican City",
       "continent": "Europe",
-      "notes": "City-state."
+      "notes": ["City-state."]
     },
     {
       "capital": "Podgorica",
       "country/territory": "Montenegro",
       "continent": "Europe",
-      "notes": "Cetinje has been designated the \"Old Royal Capital\" and is the present seat of the President."
+      "notes": [
+        "Cetinje has been designated the \"Old Royal Capital\" and is the present seat of the President."
+      ]
     },
     {
       "capital": "Gitega (de jure)",
       "country/territory": "Burundi",
       "continent": "Africa",
-      "notes": "Bujumbura was the capital from 1962 to 2018."
+      "notes": ["Bujumbura was the capital from 1962 to 2018."]
     },
     {
       "capital": "Bujumbura (de facto)",
       "country/territory": "Burundi",
       "continent": "Africa",
-      "notes": "Bujumbura was the capital from 1962 to 2018."
+      "notes": ["Bujumbura was the capital from 1962 to 2018."]
     },
     {
       "capital": "Brussels",
       "country/territory": "Belgium",
       "continent": "Europe",
-      "notes": "Brussels also serves as de facto capital of the European Union.[1]"
+      "notes": [
+        "Brussels also serves as de facto capital of the European Union."
+      ]
     },
     {
       "capital": "Brussels",
       "country/territory": "European Union//EU",
       "continent": "Europe",
-      "notes": "Brussels also serves as de facto capital of the European Union.[1]"
+      "notes": ["Brussels is also the capital of Belgium."]
     },
     {
       "capital": "Berlin",
       "country/territory": "Germany",
       "continent": "Europe",
-      "notes": "Bonn was the capital of West Germany and remained the seat of government for reunified Germany until 1999, and is still the primary seat of six ministries. See also: Capital of Germany."
+      "notes": [
+        "Bonn was the capital of West Germany and remained the seat of government for reunified Germany until 1999, and is still the primary seat of six ministries."
+      ]
     },
     {
       "capital": "Belmopan",
       "country/territory": "Belize",
       "continent": "North America",
-      "notes": "Belize City was the capital of Belize's predecessor, British Honduras."
+      "notes": [
+        "Belize City was the capital of Belize's predecessor, British Honduras."
+      ]
     },
     {
       "capital": "Astana",
       "country/territory": "Kazakhstan",
       "continent": "Asia",
-      "notes": "Astana was named Nur-Sultan from 2019 to 2022. Almaty was the capital of Kazakhstan from 1991 to 1997 and its predecessor the Kazakh SSR from 1929 to 1991."
+      "notes": [
+        "Astana was named Nur-Sultan from 2019 to 2022. Almaty was the capital of Kazakhstan from 1991 to 1997 and its predecessor the Kazakh SSR from 1929 to 1991."
+      ]
     },
     {
       "capital": "Ankara",
       "country/territory": "Turkey",
       "continent": "Asia",
-      "notes": "Ankara became the capital of the newly-formed Republic of Turkey in 1923, after the Turkish War of Independence. Istanbul was the capital of Turkey's predecessor, the Ottoman Empire."
+      "notes": [
+        "Ankara became the capital of the newly-formed Republic of Turkey in 1923, after the Turkish War of Independence. Istanbul was the capital of Turkey's predecessor, the Ottoman Empire."
+      ]
     },
     {
       "capital": "Sri Jayawardenepura Kotte (official)",
       "country/territory": "Sri Lanka",
       "continent": "Asia",
-      "notes": "Also known as Kotte, Sri Jayawardenepura Kotte is a suburb of Colombo."
+      "notes": [
+        "Also known as Kotte, Sri Jayawardenepura Kotte is a suburb of Colombo."
+      ]
     },
     {
       "capital": "Abidjan (former capital; still hosts some government offices)",
-      "country/territory": "Ivory Coast//CÃ´te d'Ivoire",
+      "country/territory": "Ivory Coast//Côte d'Ivoire",
       "continent": "Africa",
-      "notes": "Abidjan is the largest city in Ivory Coast and is officially designated as the economic capital."
+      "notes": [
+        "Abidjan is the largest city in Ivory Coast and is officially designated as the economic capital."
+      ]
     },
     {
       "capital": "Yamoussoukro (de jure)",
-      "country/territory": "Ivory Coast//CÃ´te d'Ivoire",
+      "country/territory": "Ivory Coast//Côte d'Ivoire",
       "continent": "Africa",
-      "notes": "Abidjan is the largest city in Ivory Coast and is officially designated as the economic capital."
+      "notes": [
+        "Abidjan is the largest city in Ivory Coast and is officially designated as the economic capital."
+      ]
     },
     {
       "capital": "Jakarta",
       "country/territory": "Indonesia",
       "continent": "Asia",
-      "notes": "A new purpose-built city named Nusantara in Kalimantan is planned to replace Jakarta as the national capital from the mid-2020s.[2][3]"
+      "notes": [
+        "A new purpose-built city named Nusantara in Kalimantan is planned to replace Jakarta as the national capital from the mid-2020s."
+      ]
     },
     {
       "capital": "Cairo",
       "country/territory": "Egypt",
       "continent": "Africa",
-      "notes": "A new capital is being built at the New Administrative Capital. It might be named Egypt. See also: List of historical capitals of Egypt."
+      "notes": [
+        "A new capital is being built at the New Administrative Capital. It might be named Egypt."
+      ]
     },
     {
       "capital": "Kabul",
@@ -525,7 +599,7 @@
       "continent": "Asia"
     },
     {
-      "capital": "YaoundÃ©",
+      "capital": "Yaoundé",
       "country/territory": "Cameroon",
       "continent": "Africa"
     },
@@ -550,7 +624,7 @@
       "continent": "Africa"
     },
     {
-      "capital": "BogotÃ¡",
+      "capital": "Bogotá",
       "country/territory": "Colombia",
       "continent": "South America"
     },
@@ -565,7 +639,7 @@
       "continent": "Africa"
     },
     {
-      "capital": "San JosÃ©",
+      "capital": "San José",
       "country/territory": "Costa Rica",
       "continent": "North America"
     },
@@ -700,7 +774,7 @@
       "continent": "North America"
     },
     {
-      "capital": "ReykjavÃ­k",
+      "capital": "Reykjavík",
       "country/territory": "Iceland",
       "continent": "Europe"
     },
@@ -815,7 +889,7 @@
       "continent": "Asia"
     },
     {
-      "capital": "MalÃ©",
+      "capital": "Malé",
       "country/territory": "Maldives",
       "continent": "Asia"
     },
@@ -891,7 +965,7 @@
     },
     {
       "capital": "Skopje",
-      "country/territory": "North Macedonia",
+      "country/territory": "North Macedonia//Macedonia",
       "continent": "Europe"
     },
     {
@@ -910,7 +984,7 @@
       "continent": "Oceania"
     },
     {
-      "capital": "AsunciÃ³n",
+      "capital": "Asunción",
       "country/territory": "Paraguay",
       "continent": "South America"
     },
@@ -970,8 +1044,8 @@
       "continent": "Europe"
     },
     {
-      "capital": "SÃ£o TomÃ©",
-      "country/territory": "SÃ£o TomÃ© and PrÃ­ncipe",
+      "capital": "São Tomé",
+      "country/territory": "São Tomé and Príncipe",
       "continent": "Africa"
     },
     {
@@ -1075,12 +1149,12 @@
       "continent": "Asia"
     },
     {
-      "capital": "LomÃ©",
+      "capital": "Lomé",
       "country/territory": "Togo",
       "continent": "Africa"
     },
     {
-      "capital": "NukuÊ»alofa",
+      "capital": "Nuku'alofa",
       "country/territory": "Tonga",
       "continent": "Oceania"
     },

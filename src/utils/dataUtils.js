@@ -25,7 +25,7 @@ const strip = (s, modifiers) => {
       : "";
   }
 
-  if (modifiers.ignorePunctuationAndDiacritics) {
+  if (modifiers.ignorePunctuationAndDiacriticsAndBrackets) {
     if (typeof s === "string") {
       if (s.split("").includes("(")) {
         let cleaned = "";

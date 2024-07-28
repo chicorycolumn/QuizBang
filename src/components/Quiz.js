@@ -10,8 +10,7 @@ const Quiz = () => {
     score,
     scoreJustReceived,
     checkAnswer,
-    correctAnswers,
-    // selectedAnswer,
+    cuestionIsFinished,
     cuestionIndex,
     moveForward,
     returnToStart,
@@ -32,7 +31,6 @@ const Quiz = () => {
     setPlayerInput("");
     moveForward();
   };
-  const cuestionIsFinished = correctAnswers?.length;
 
   const wereYouCorrect = () => {
     let baseColor = "#3d3d3d";
@@ -152,9 +150,7 @@ const Quiz = () => {
                     {cuestionIsFinished
                       ? scoreJustReceived
                         ? `+${scoreJustReceived}${
-                            cuestion?.yourMark === 0.5
-                              ? " (half points for getting close)"
-                              : "!"
+                            cuestion?.yourMark === 0.5 ? " (half points)" : "!"
                           }`
                         : "Next"
                       : "Submit"}
@@ -168,6 +164,12 @@ const Quiz = () => {
                       cuestion.answers.map((ans, ansIndex) => (
                         <p className="my-2" key={`ans-${ansIndex}`}>
                           {"✅ " + ans}
+                        </p>
+                      ))}
+                    {cuestion?.datum.notes &&
+                      cuestion.datum.notes.map((note, noteIndex) => (
+                        <p className="my-2" key={`note-${noteIndex}`}>
+                          {"💡 " + note}
                         </p>
                       ))}
                   </div>

@@ -56,14 +56,11 @@ export const makeCuestion = (quiz, prevCuestion) => {
     return eval(quiz.questionPhrasingPerUnknown[unknownField]);
   };
 
+  let knownValue = getField(datum[knownField]);
+
   let question = quiz.questionPhrasingPerUnknown
-    ? getSpecificPhrasing(unknownField, getField(datum[knownField]))
-    : getGenericPhrasing(
-        label,
-        knownField,
-        unknownField,
-        getField(datum[knownField])
-      );
+    ? getSpecificPhrasing(unknownField, knownValue)
+    : getGenericPhrasing(label, knownField, unknownField, knownValue);
 
   let answers = getFields(datum[unknownField]);
 
@@ -81,6 +78,18 @@ export const makeCuestion = (quiz, prevCuestion) => {
         });
       });
   }
+
+  quiz.datums.forEach((datum) => {
+    let _knowns = getFields(datum[knownField]);
+    if (_knowns.includes(knownValue)) {
+      let _unknowns = getFields(datum[unknownField]);
+      _unknowns.forEach((_unknown) => {
+        if (!answers.includes(_unknown)) {
+          answers.push(_unknown);
+        }
+      });
+    }
+  });
 
   return { question, answers, datum };
 };

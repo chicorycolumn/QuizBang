@@ -9,7 +9,7 @@ export const DataProvider = ({ children }) => {
   const [round, setRound] = useState();
   const [cuestion, setCuestion] = useState({});
   const [cuestionIndex, setCuestionIndex] = useState(0);
-  const [correctAnswers, setCorrectAnswers] = useState("");
+  const [cuestionIsFinished, setCuestionIsFinished] = useState();
   const [selectedAnswer, setSelectedAnswer] = useState("");
   const [score, setScore] = useState(0);
   const [scoreJustReceived, setScoreJustReceived] = useState(0);
@@ -62,7 +62,7 @@ export const DataProvider = ({ children }) => {
     cuestion["yourMark"] = mark;
 
     if (!selectedAnswer) {
-      setCorrectAnswers(answers);
+      setCuestionIsFinished(true);
       setSelectedAnswer(selected);
 
       if (mark === 1) {
@@ -79,7 +79,7 @@ export const DataProvider = ({ children }) => {
   // Next Cuestion
   const moveForward = () => {
     // Go to next cuestion
-    setCorrectAnswers([]);
+    setCuestionIsFinished();
     setScoreJustReceived(0);
     setSelectedAnswer("");
     setCuestionIndex((prev) => prev + 1);
@@ -90,7 +90,7 @@ export const DataProvider = ({ children }) => {
     setRound();
     setShowStart(true);
     setShowRound(false);
-    setCorrectAnswers([]);
+    setCuestionIsFinished();
     setSelectedAnswer("");
     setCuestionIndex(0);
     setScore(0);
@@ -109,8 +109,7 @@ export const DataProvider = ({ children }) => {
         cuestion,
         round,
         checkAnswer,
-        correctAnswers,
-        selectedAnswer,
+        cuestionIsFinished,
         cuestionIndex,
         moveForward,
         score,
