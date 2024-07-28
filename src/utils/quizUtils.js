@@ -1,14 +1,21 @@
 const uUtils = require("./universalUtils.js");
 
-export const makeCuestion = (quiz, prevCuestion) => {
+export const makeCuestion = (quiz, prevCuestion, datumIndex) => {
   let previousDatum = prevCuestion?.datum;
   let uniqueKey = quiz.uniqueKey || "name";
 
-  let datum = uUtils.selectRandom(
-    quiz["datums"].filter(
-      (datum) => !previousDatum || previousDatum[uniqueKey] !== datum[uniqueKey]
-    )
-  );
+  let datum;
+  if (datumIndex || datumIndex === 0) {
+    datum = quiz.datums[datumIndex];
+  } else {
+    datum = uUtils.selectRandom(
+      quiz["datums"].filter(
+        (datum) =>
+          !previousDatum || previousDatum[uniqueKey] !== datum[uniqueKey]
+      )
+    );
+  }
+
   let { fieldsToTest } = quiz;
   if (!fieldsToTest || !fieldsToTest.length) {
     fieldsToTest = Object.keys(quiz.datums[0]);

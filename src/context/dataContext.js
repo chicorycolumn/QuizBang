@@ -1,6 +1,7 @@
 import { createContext, useState, useEffect } from "react";
 const dataU = require("../utils/dataUtils.js");
 const quizU = require("../utils/quizUtils.js");
+const uUtils = require("../utils/universalUtils.js");
 const executors = require("../utils/executors.js").executors;
 
 const DataContext = createContext({});
@@ -25,11 +26,19 @@ export const DataProvider = ({ children }) => {
   useEffect(() => {
     setCuestion((prevCuestion) => {
       if (round) {
+        if (round.datums && !(cuestionIndex % round.datums.length)) {
+          uUtils.shuffle(round.datums);
+        }
+
         let makeCuestion = round.executor
           ? executors[round.executor]
           : quizU.makeCuestion;
 
-        let newCuestion = makeCuestion(round, prevCuestion);
+        let newCuestion = makeCuestion(
+          round,
+          prevCuestion,
+          round.datums && cuestionIndex % round.datums.length
+        );
         return newCuestion;
       }
     });

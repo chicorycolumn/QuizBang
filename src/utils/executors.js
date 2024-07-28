@@ -104,12 +104,14 @@ export const executors = {
         return [`${numA} × ${numB}`, unknown];
       },
       div: () => {
-        let numA = uUtils.selectRandom(uUtils.getNumArr(12, 99));
+        let numA = uUtils.selectRandom(uUtils.getNumArr(2, 9));
         let numB = uUtils.selectRandom(
           uUtils.getNumArr(12, 99).filter((n) => n !== numA)
         );
         let multiplied = numA * numB;
-        return [`${multiplied} ÷ ${numA}`, numB];
+        return Math.round(Math.random())
+          ? [`${multiplied} ÷ ${numA}`, numB]
+          : [`${multiplied} ÷ ${numB}`, numA];
       },
     };
     let data = operationFunctions[operation]();
