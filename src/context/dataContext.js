@@ -1,6 +1,7 @@
 import { createContext, useState, useEffect } from "react";
 const dataU = require("../utils/dataUtils.js");
 const quizU = require("../utils/quizUtils.js");
+const executors = require("../utils/executors.js").executors;
 
 const DataContext = createContext({});
 
@@ -17,14 +18,18 @@ export const DataProvider = ({ children }) => {
   const [showStart, setShowStart] = useState(true);
   const [showRound, setShowRound] = useState(false);
 
-  // Load JSON Data
-  useEffect(() => {}, []);
+  // // Load JSON Data
+  // useEffect(() => {}, []);
 
   // Set a Single Cuestion
   useEffect(() => {
     setCuestion((prevCuestion) => {
       if (round) {
-        let newCuestion = quizU.makeCuestion(round, prevCuestion?.datum);
+        let makeCuestion = round.executor
+          ? executors[round.executor]
+          : quizU.makeCuestion;
+
+        let newCuestion = makeCuestion(round, prevCuestion);
         return newCuestion;
       }
     });
@@ -44,18 +49,24 @@ export const DataProvider = ({ children }) => {
   // Check Answer
   const checkAnswer = (event, selected, putativeScore) => {
     let answers = cuestion.answers;
+    let halfMarkAnswers = cuestion.halfMarkAnswers;
 
-    let isCorrect = dataU.validateAnswer(answers, selected);
+    let mark = dataU.validateAnswer(selected, answers, halfMarkAnswers);
+
     cuestion["yourAnswer"] = selected;
-    cuestion["youWereCorrect"] = isCorrect;
+    cuestion["yourMark"] = mark;
 
     if (!selectedAnswer) {
       setCorrectAnswers(answers);
       setSelectedAnswer(selected);
 
-      if (isCorrect) {
+      if (mark === 1) {
         setScoreJustReceived(putativeScore);
         setScore((prev) => prev + putativeScore);
+      } else if (mark === 0.5) {
+        let halfScore = Math.ceil(putativeScore / 2);
+        setScoreJustReceived(halfScore);
+        setScore((prev) => prev + halfScore);
       }
     }
   };

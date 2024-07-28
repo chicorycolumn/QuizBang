@@ -34,6 +34,24 @@ const Quiz = () => {
   };
   const cuestionIsFinished = correctAnswers?.length;
 
+  const wereYouCorrect = () => {
+    let baseColor = "#3d3d3d";
+
+    if (cuestion && Object.keys(cuestion).includes("yourMark")) {
+      if (cuestion.yourMark === 1) {
+        return "bg-success";
+      }
+      if (cuestion.yourMark === 0.5) {
+        return "bg-warning";
+      }
+      if (cuestion.yourMark === 0) {
+        return "bg-danger";
+      }
+    }
+
+    return baseColor;
+  };
+
   return (
     <section
       className="bg-dark text-white"
@@ -114,14 +132,7 @@ const Quiz = () => {
                   ></input>
                   <button
                     type="submit"
-                    className={`option w-100 text-center btn text-white py-2 px-3 mt-3 rounded btn-dark ${
-                      cuestion &&
-                      Object.keys(cuestion).includes("youWereCorrect")
-                        ? cuestion.youWereCorrect
-                          ? "bg-success"
-                          : "bg-danger"
-                        : "#3d3d3d"
-                    }`}
+                    className={`option w-100 text-center btn text-white py-2 px-3 mt-3 rounded btn-dark ${wereYouCorrect()}`}
                     disabled={!playerInput}
                     onClick={(event) => {
                       event.preventDefault();
@@ -140,7 +151,11 @@ const Quiz = () => {
                   >
                     {cuestionIsFinished
                       ? scoreJustReceived
-                        ? `+${scoreJustReceived}!`
+                        ? `+${scoreJustReceived}${
+                            cuestion?.yourMark === 0.5
+                              ? " (half points for getting close)"
+                              : "!"
+                          }`
                         : "Next"
                       : "Submit"}
                   </button>

@@ -1,11 +1,10 @@
-const selectRandom = (array) => {
-  return array[Math.floor(Math.random() * array.length)];
-};
+const uUtils = require("./universalUtils.js");
 
-export const makeCuestion = (quiz, previousDatum) => {
+export const makeCuestion = (quiz, prevCuestion) => {
+  let previousDatum = prevCuestion?.datum;
   let uniqueKey = quiz.uniqueKey || "name";
 
-  let datum = selectRandom(
+  let datum = uUtils.selectRandom(
     quiz["datums"].filter(
       (datum) => !previousDatum || previousDatum[uniqueKey] !== datum[uniqueKey]
     )
@@ -19,7 +18,7 @@ export const makeCuestion = (quiz, previousDatum) => {
     (field) => datum[field] || datum[field] === 0
   );
 
-  let unknownField = selectRandom(fields);
+  let unknownField = uUtils.selectRandom(fields);
 
   let availableKnownFields = fields
     .filter((field) => datum[field] || datum[field] === 0)
@@ -33,14 +32,14 @@ export const makeCuestion = (quiz, previousDatum) => {
       return true;
     });
 
-  let knownField = selectRandom(
+  let knownField = uUtils.selectRandom(
     availableKnownFields.filter((field) => field !== unknownField)
   );
   let label = quiz["label"];
   let question;
 
   const getField = (raw) => {
-    return selectRandom(raw.toString().split("//"));
+    return uUtils.selectRandom(raw.toString().split("//"));
   };
   const getFields = (raw) => {
     return raw.toString().split("//");
