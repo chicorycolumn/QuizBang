@@ -145,7 +145,7 @@ const Quiz = () => {
                           10;
                         let putativeScore =
                           dispU.getPutativeScore(secondsElapsed);
-                        checkAnswer(event, playerInput, putativeScore);
+                        checkAnswer(event, playerInput, putativeScore, round);
                       }
                     }}
                   >

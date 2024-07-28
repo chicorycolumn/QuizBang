@@ -35,8 +35,7 @@ export const makeCuestion = (quiz, prevCuestion) => {
   let knownField = uUtils.selectRandom(
     availableKnownFields.filter((field) => field !== unknownField)
   );
-  let label = quiz["label"];
-  let question;
+  let label = quiz["label"] || unknownField;
 
   const getField = (raw) => {
     return uUtils.selectRandom(raw.toString().split("//"));
@@ -44,18 +43,27 @@ export const makeCuestion = (quiz, prevCuestion) => {
   const getFields = (raw) => {
     return raw.toString().split("//");
   };
+  const getGenericPhrasing = (label, knownField, unknownField, knownItem) => {
+    if (unknownField === "name") {
+      return `Which ${label} has ${knownField} of ${knownItem}?`;
+    } else if (knownField === "name") {
+      return `What is the ${unknownField} of ${knownItem}?`;
+    } else {
+      return `What is the ${unknownField} of the ${label} with ${knownField} of ${knownItem}?`;
+    }
+  };
+  const getSpecificPhrasing = (unknownField, knownItem) => {
+    return eval(quiz.questionPhrasingPerUnknown[unknownField]);
+  };
 
-  if (unknownField === "name") {
-    question = `Which ${label} has ${knownField} of ${getField(
-      datum[knownField]
-    )}?`;
-  } else if (knownField === "name") {
-    question = `What is the ${unknownField} of ${getField(datum[knownField])}?`;
-  } else {
-    question = `What is the ${unknownField} of the ${label} with ${knownField} of ${getField(
-      datum[knownField]
-    )}?`;
-  }
+  let question = quiz.questionPhrasingPerUnknown
+    ? getSpecificPhrasing(unknownField, getField(datum[knownField]))
+    : getGenericPhrasing(
+        label,
+        knownField,
+        unknownField,
+        getField(datum[knownField])
+      );
 
   let answers = getFields(datum[unknownField]);
 
