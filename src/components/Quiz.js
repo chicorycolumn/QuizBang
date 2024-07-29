@@ -14,9 +14,12 @@ const Quiz = () => {
     cuestionIndex,
     moveForward,
     returnToStart,
+    totalCorrect,
+    setRound,
   } = useContext(DataContext);
 
   const [startTime, setStartTime] = useState(new Date());
+  const [showOptions, setShowOptions] = useState();
 
   useEffect(() => {
     if (showRound) {
@@ -24,6 +27,23 @@ const Quiz = () => {
       setStartTime(new Date());
     }
   }, [showRound, cuestionIndex]);
+
+  useEffect(() => {
+    const listenForEscape = (event) => {
+      if (event.key === "Escape") {
+        event.preventDefault();
+        document.getElementById("exit_button").click();
+      }
+    };
+
+    if (round) {
+      document.addEventListener("keyup", listenForEscape);
+    }
+
+    return () => {
+      document.removeEventListener("keyup", listenForEscape);
+    };
+  }, [round]);
 
   const [playerInput, setPlayerInput] = useState("");
 
@@ -50,6 +70,14 @@ const Quiz = () => {
     return baseColor;
   };
 
+  const getPercentage = () => {
+    return (
+      Math.round(
+        (totalCorrect / (cuestionIndex + (cuestionIsFinished ? 1 : 0))) * 100
+      ) || 0
+    );
+  };
+
   return (
     <section
       className="bg-dark text-white"
@@ -60,35 +88,116 @@ const Quiz = () => {
           <div className="col-lg-8 pb-5">
             <div className="d-flex flex-column justify-content-between align-items-center gap-md-3 px-1">
               <div className="mt-3 d-flex w-100 justify-content-between align-items-center gap-md-3 px-1">
-                <button
-                  className="btn w-5 h-25 bg-primarycolordark text-light px-2 mb-1"
-                  style={{
-                    height: "8px",
-                    paddingTop: 0.5,
-                    paddingBottom: 0.5,
-                  }}
-                  onClick={() => {
-                    if (
-                      window.confirm(
-                        "Are you sure you want to exit? Your score will be reset."
-                      )
-                    ) {
-                      setPlayerInput("");
-                      returnToStart();
-                    }
-                  }}
-                >
-                  EXIT
-                </button>
-                <h5 className="fs-normal lh-base text-right primarycolor">
-                  {`Score: ${score}`}
-                </h5>
+                <div className="w-25 d-flex justify-content-left">
+                  {" "}
+                  <button
+                    id="exit_button"
+                    className="btn w-5 h-25 bg-primarycolordark text-light px-2 mb-1"
+                    style={{
+                      height: "8px",
+                      paddingTop: 0.5,
+                      paddingBottom: 0.5,
+                    }}
+                    onClick={() => {
+                      if (
+                        window.confirm(
+                          "Are you sure you want to exit? Your score will be reset."
+                        )
+                      ) {
+                        setPlayerInput("");
+                        returnToStart();
+                      }
+                    }}
+                  >
+                    EXIT
+                  </button>
+                </div>
+                <div className="w-50 d-flex justify-content-center">
+                  <h5 className="fs-normal lh-base text-right primarycolor">
+                    {`${score}`}
+                  </h5>
+                </div>
+                <div className="w-25 d-flex justify-content-end">
+                  <h5
+                    className="fs-normal lh-base text-right primarycolor"
+                    onClick={() => {
+                      console.log(round);
+                    }}
+                  >
+                    {`${getPercentage()}%`}
+                  </h5>
+                </div>
               </div>
 
-              <h5 className="mt-2 mb-4 fs-normal lh-base text-left">
+              <h5 className="mt-2 mb-2 fs-normal lh-base text-left">
                 {round?.title}
               </h5>
             </div>
+
+            {round?.options && round.options.length ? (
+              <div>
+                <button
+                  style={{
+                    background: "none",
+                    color: "white",
+                    fontSize: "10px",
+                    width: "77.5px",
+                  }}
+                  onClick={(e) => {
+                    e.preventDefault();
+                    setShowOptions((prev) => !prev);
+                    setTimeout(() => {
+                      if (round?.selectedOptions) {
+                        round.selectedOptions.forEach((selectedOption) => {
+                          let el = document.getElementById(
+                            `option-${selectedOption}`
+                          );
+                          if (el) {
+                            el.checked = true;
+                          }
+                        });
+                      }
+                    }, 50);
+                  }}
+                >
+                  {`${!showOptions ? "Show" : "Hide"} options`}
+                </button>
+                {showOptions
+                  ? round.options.map((option, optionIndex) => (
+                      <div key={`${optionIndex}-${option}`}>
+                        <input
+                          type="checkbox"
+                          id={`option-${option}`}
+                          name={`option-${option}`}
+                          onChange={(e) => {
+                            e.stopPropagation();
+                            setRound((prev) => {
+                              if (!prev.selectedOptions) {
+                                prev.selectedOptions = [];
+                              }
+                              if (e.target.checked) {
+                                prev.selectedOptions.push(option);
+                              } else {
+                                prev.selectedOptions =
+                                  prev.selectedOptions.filter(
+                                    (x) => x !== option
+                                  );
+                              }
+                              return prev;
+                            });
+                          }}
+                        />
+                        <label htmlFor={`option-${option}`}>
+                          {dispU.capitalise(option)}
+                        </label>
+                      </div>
+                    ))
+                  : ""}
+              </div>
+            ) : (
+              ""
+            )}
+
             <div
               className="card p-4"
               style={{

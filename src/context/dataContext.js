@@ -13,6 +13,7 @@ export const DataProvider = ({ children }) => {
   const [cuestionIsFinished, setCuestionIsFinished] = useState();
   const [selectedAnswer, setSelectedAnswer] = useState("");
   const [score, setScore] = useState(0);
+  const [totalCorrect, setTotalCorrect] = useState(0);
   const [scoreJustReceived, setScoreJustReceived] = useState(0);
 
   // Display Controlling States
@@ -74,13 +75,15 @@ export const DataProvider = ({ children }) => {
       setCuestionIsFinished(true);
       setSelectedAnswer(selected);
 
-      if (mark === 1) {
-        setScoreJustReceived(putativeScore);
-        setScore((prev) => prev + putativeScore);
-      } else if (mark === 0.5) {
-        let halfScore = Math.ceil(putativeScore / 2);
-        setScoreJustReceived(halfScore);
-        setScore((prev) => prev + halfScore);
+      const incrementScores = (scoreToAdd, multiplier = 1) => {
+        scoreToAdd = Math.ceil(scoreToAdd * multiplier);
+        setScoreJustReceived(scoreToAdd);
+        setScore((prev) => prev + scoreToAdd);
+        setTotalCorrect((prev) => prev + multiplier);
+      };
+
+      if (mark) {
+        incrementScores(putativeScore, mark);
       }
     }
   };
@@ -103,6 +106,7 @@ export const DataProvider = ({ children }) => {
     setSelectedAnswer("");
     setCuestionIndex(0);
     setScore(0);
+    setTotalCorrect(0);
     const wrongBtn = document.querySelector("button.bg-danger");
     wrongBtn?.classList.remove("bg-danger");
     const rightBtn = document.querySelector("button.bg-success");
@@ -117,6 +121,7 @@ export const DataProvider = ({ children }) => {
         showRound,
         cuestion,
         round,
+        setRound,
         checkAnswer,
         cuestionIsFinished,
         cuestionIndex,
@@ -124,6 +129,7 @@ export const DataProvider = ({ children }) => {
         score,
         returnToStart,
         scoreJustReceived,
+        totalCorrect,
       }}
     >
       {children}

@@ -19,3 +19,9 @@ export const getPutativeScore = (secondsElapsed) => {
   let calculatedScore = Math.floor(putativeScore);
   return calculatedScore;
 };
+
+export const capitalise = (s) => {
+  if (s) {
+    return s[0].toUpperCase() + s.slice(1);
+  }
+};

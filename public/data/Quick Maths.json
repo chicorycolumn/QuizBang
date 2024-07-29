@@ -1,4 +1,5 @@
 {
   "title": "Quick Maths",
-  "executor": "quickMaths1"
+  "executor": "quickMaths1",
+  "options": ["exponents", "percentages", "fractions"]
 }
