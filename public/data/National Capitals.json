@@ -3,6 +3,7 @@
   "label": null,
   "uniqueKey": "country/territory",
   "fieldsToTest": ["capital", "country/territory"],
+  "categories": ["continent"],
   "questionPhrasingPerUnknown": {
     "capital": "`What is the capital of ${knownItem}?`",
     "country/territory": "`${knownItem} is the capital of?`"
@@ -919,7 +920,7 @@
       "continent": "North America"
     },
     {
-      "capital": "ChiÈinÄu",
+      "capital": "Chișinău",
       "country/territory": "Moldova",
       "continent": "Europe"
     },

@@ -50,6 +50,22 @@ export const DataProvider = ({ children }) => {
     fetch(`data/${filename}.json`)
       .then((res) => res.json())
       .then((data) => {
+        if (data.categories && data.datums) {
+          data.categories.forEach((category) => {
+            if (!data.options) {
+              data.options = [];
+            }
+            data.datums.forEach((datum) => {
+              let optionString = `${category}::${datum[category]}`;
+
+              if (!data.options.includes(optionString)) {
+                data.options.push(optionString);
+              }
+            });
+          });
+          data.categories.sort((x, y) => x.localeCompare(y));
+        }
+
         setRound(data);
         setShowStart(false);
         setShowRound(true);

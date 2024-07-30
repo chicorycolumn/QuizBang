@@ -20,6 +20,7 @@ const Quiz = () => {
 
   const [startTime, setStartTime] = useState(new Date());
   const [showOptions, setShowOptions] = useState();
+  const [options, setOptions] = useState([]);
 
   useEffect(() => {
     if (showRound) {
@@ -38,6 +39,32 @@ const Quiz = () => {
 
     if (round) {
       document.addEventListener("keyup", listenForEscape);
+
+      if (round.options && round.options.length) {
+        round.options.sort((x, y) => x.localeCompare(y));
+        let opts = [];
+        round.options.forEach((opt) => {
+          if (opt.includes("::")) {
+            let catName = opt.split("::")[0];
+            if (
+              !opts.some((op) => op.type === "name" && op.value === catName)
+            ) {
+              opts.push({
+                type: "name",
+                value: catName,
+              });
+            }
+            opts.push({
+              type: "value",
+              value: opt.split("::")[1],
+              combined: opt,
+            });
+          } else {
+            opts.push({ type: "value", value: opt });
+          }
+        });
+        setOptions(opts || []);
+      }
     }
 
     return () => {
@@ -89,7 +116,6 @@ const Quiz = () => {
             <div className="d-flex flex-column justify-content-between align-items-center gap-md-3 px-1">
               <div className="mt-3 d-flex w-100 justify-content-between align-items-center gap-md-3 px-1">
                 <div className="w-25 d-flex justify-content-left">
-                  {" "}
                   <button
                     id="exit_button"
                     className="btn w-5 h-25 bg-primarycolordark text-light px-2 mb-1"
@@ -134,7 +160,7 @@ const Quiz = () => {
               </h5>
             </div>
 
-            {round?.options && round.options.length ? (
+            {options.length ? (
               <div>
                 <button
                   style={{
@@ -163,35 +189,47 @@ const Quiz = () => {
                   {`${!showOptions ? "Show" : "Hide"} options`}
                 </button>
                 {showOptions
-                  ? round.options.map((option, optionIndex) => (
-                      <div key={`${optionIndex}-${option}`}>
-                        <input
-                          type="checkbox"
-                          id={`option-${option}`}
-                          name={`option-${option}`}
-                          onChange={(e) => {
-                            e.stopPropagation();
-                            setRound((prev) => {
-                              if (!prev.selectedOptions) {
-                                prev.selectedOptions = [];
-                              }
-                              if (e.target.checked) {
-                                prev.selectedOptions.push(option);
-                              } else {
-                                prev.selectedOptions =
-                                  prev.selectedOptions.filter(
-                                    (x) => x !== option
-                                  );
-                              }
-                              return prev;
-                            });
-                          }}
-                        />
-                        <label htmlFor={`option-${option}`}>
-                          {dispU.capitalise(option)}
-                        </label>
-                      </div>
-                    ))
+                  ? options.map((option, optionIndex) => {
+                      if (option.type === "name") {
+                        return (
+                          <p
+                            className="my-0"
+                            key={`${optionIndex}-name-${option.value}`}
+                          >
+                            {option.value.toUpperCase()}
+                          </p>
+                        );
+                      }
+                      return (
+                        <div key={`${optionIndex}-value-${option.value}`}>
+                          <input
+                            type="checkbox"
+                            id={`option-${option.value}`}
+                            name={`option-${option.value}`}
+                            onChange={(e) => {
+                              e.stopPropagation();
+                              setRound((prev) => {
+                                if (!prev.selectedOptions) {
+                                  prev.selectedOptions = [];
+                                }
+                                if (e.target.checked) {
+                                  prev.selectedOptions.push(option.combined);
+                                } else {
+                                  prev.selectedOptions =
+                                    prev.selectedOptions.filter(
+                                      (x) => x !== option.combined
+                                    );
+                                }
+                                return prev;
+                              });
+                            }}
+                          />
+                          <label htmlFor={`option-${option.value}`}>
+                            {dispU.capitalise(option.value)}
+                          </label>
+                        </div>
+                      );
+                    })
                   : ""}
               </div>
             ) : (
