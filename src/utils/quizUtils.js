@@ -1,15 +1,30 @@
 const uUtils = require("./universalUtils.js");
 
-export const makeCuestion = (quiz, prevCuestion, datumIndex) => {
+export const makeCuestion = (quiz, prevCuestion, cuestionIndex) => {
   let previousDatum = prevCuestion?.datum;
   let uniqueKey = quiz.uniqueKey || "name";
 
+  let datums = quiz.datums;
+  if (quiz.selectedOptions && quiz.selectedOptions.length) {
+    datums = datums.filter((datum) => {
+      return quiz.selectedOptions.some((selectedOption) => {
+        let [category, value] = selectedOption.split("::");
+        return datum[category].split("//").includes(value);
+      });
+    });
+  }
+  console.log({ datums });
+  let datumIndex = cuestionIndex % datums.length;
+
   let datum;
-  if (datumIndex || datumIndex === 0) {
-    datum = quiz.datums[datumIndex];
+  if (datumIndex) {
+    datum = datums[datumIndex];
+  } else if (datumIndex === 0) {
+    uUtils.shuffle(datums);
+    datum = datums[datumIndex];
   } else {
     datum = uUtils.selectRandom(
-      quiz["datums"].filter(
+      datums.filter(
         (datum) =>
           !previousDatum || previousDatum[uniqueKey] !== datum[uniqueKey]
       )
@@ -18,7 +33,7 @@ export const makeCuestion = (quiz, prevCuestion, datumIndex) => {
 
   let { fieldsToTest } = quiz;
   if (!fieldsToTest || !fieldsToTest.length) {
-    fieldsToTest = Object.keys(quiz.datums[0]);
+    fieldsToTest = Object.keys(datums[0]);
   }
 
   let fields = fieldsToTest.filter(
@@ -86,7 +101,7 @@ export const makeCuestion = (quiz, prevCuestion, datumIndex) => {
       });
   }
 
-  quiz.datums.forEach((datum) => {
+  datums.forEach((datum) => {
     let _knowns = getFields(datum[knownField]);
     if (_knowns.includes(knownValue)) {
       let _unknowns = getFields(datum[unknownField]);

@@ -10,11 +10,13 @@ export const DataProvider = ({ children }) => {
   const [round, setRound] = useState();
   const [cuestion, setCuestion] = useState({});
   const [cuestionIndex, setCuestionIndex] = useState(0);
+  const [playerCuestionIndex, setPlayerCuestionIndex] = useState(0);
   const [cuestionIsFinished, setCuestionIsFinished] = useState();
   const [selectedAnswer, setSelectedAnswer] = useState("");
   const [score, setScore] = useState(0);
   const [totalCorrect, setTotalCorrect] = useState(0);
   const [scoreJustReceived, setScoreJustReceived] = useState(0);
+  const [optionsHaveChanged, setOptionsHaveChanged] = useState();
 
   // Display Controlling States
   const [showStart, setShowStart] = useState(true);
@@ -35,11 +37,7 @@ export const DataProvider = ({ children }) => {
           ? executors[round.executor]
           : quizU.makeCuestion;
 
-        let newCuestion = makeCuestion(
-          round,
-          prevCuestion,
-          round.datums && cuestionIndex % round.datums.length
-        );
+        let newCuestion = makeCuestion(round, prevCuestion, cuestionIndex);
         return newCuestion;
       }
     });
@@ -56,11 +54,13 @@ export const DataProvider = ({ children }) => {
               data.options = [];
             }
             data.datums.forEach((datum) => {
-              let optionString = `${category}::${datum[category]}`;
+              datum[category].split("//").forEach((value) => {
+                let optionString = `${category}::${value}`;
 
-              if (!data.options.includes(optionString)) {
-                data.options.push(optionString);
-              }
+                if (!data.options.includes(optionString)) {
+                  data.options.push(optionString);
+                }
+              });
             });
           });
           data.categories.sort((x, y) => x.localeCompare(y));
@@ -110,7 +110,14 @@ export const DataProvider = ({ children }) => {
     setCuestionIsFinished();
     setScoreJustReceived(0);
     setSelectedAnswer("");
-    setCuestionIndex((prev) => prev + 1);
+    if (optionsHaveChanged) {
+      setCuestionIndex(0);
+      setOptionsHaveChanged();
+    } else {
+      setCuestionIndex((prev) => prev + 1);
+    }
+
+    setPlayerCuestionIndex((prev) => prev + 1);
   };
 
   // Start Over
@@ -121,6 +128,7 @@ export const DataProvider = ({ children }) => {
     setCuestionIsFinished();
     setSelectedAnswer("");
     setCuestionIndex(0);
+    setPlayerCuestionIndex(0);
     setScore(0);
     setTotalCorrect(0);
     const wrongBtn = document.querySelector("button.bg-danger");
@@ -141,11 +149,13 @@ export const DataProvider = ({ children }) => {
         checkAnswer,
         cuestionIsFinished,
         cuestionIndex,
+        playerCuestionIndex,
         moveForward,
         score,
         returnToStart,
         scoreJustReceived,
         totalCorrect,
+        setOptionsHaveChanged,
       }}
     >
       {children}

@@ -11,11 +11,12 @@ const Quiz = () => {
     scoreJustReceived,
     checkAnswer,
     cuestionIsFinished,
-    cuestionIndex,
+    playerCuestionIndex,
     moveForward,
     returnToStart,
     totalCorrect,
     setRound,
+    setOptionsHaveChanged,
   } = useContext(DataContext);
 
   const [startTime, setStartTime] = useState(new Date());
@@ -27,7 +28,7 @@ const Quiz = () => {
       document.getElementById("text_input").focus();
       setStartTime(new Date());
     }
-  }, [showRound, cuestionIndex]);
+  }, [showRound, playerCuestionIndex]);
 
   useEffect(() => {
     const listenForEscape = (event) => {
@@ -60,7 +61,7 @@ const Quiz = () => {
               combined: opt,
             });
           } else {
-            opts.push({ type: "value", value: opt });
+            opts.push({ type: "value", value: opt, combined: opt });
           }
         });
         setOptions(opts || []);
@@ -100,7 +101,8 @@ const Quiz = () => {
   const getPercentage = () => {
     return (
       Math.round(
-        (totalCorrect / (cuestionIndex + (cuestionIsFinished ? 1 : 0))) * 100
+        (totalCorrect / (playerCuestionIndex + (cuestionIsFinished ? 1 : 0))) *
+          100
       ) || 0
     );
   };
@@ -147,7 +149,7 @@ const Quiz = () => {
                   <h5
                     className="fs-normal lh-base text-right primarycolor"
                     onClick={() => {
-                      console.log(round);
+                      console.log({ round });
                     }}
                   >
                     {`${getPercentage()}%`}
@@ -194,18 +196,18 @@ const Quiz = () => {
                         return (
                           <p
                             className="my-0"
-                            key={`${optionIndex}-name-${option.value}`}
+                            key={`${optionIndex}-name-${option.combined}`}
                           >
                             {option.value.toUpperCase()}
                           </p>
                         );
                       }
                       return (
-                        <div key={`${optionIndex}-value-${option.value}`}>
+                        <div key={`${optionIndex}-value-${option.combined}`}>
                           <input
                             type="checkbox"
-                            id={`option-${option.value}`}
-                            name={`option-${option.value}`}
+                            id={`option-${option.combined}`}
+                            name={`option-${option.combined}`}
                             onChange={(e) => {
                               e.stopPropagation();
                               setRound((prev) => {
@@ -222,9 +224,10 @@ const Quiz = () => {
                                 }
                                 return prev;
                               });
+                              setOptionsHaveChanged(true);
                             }}
                           />
-                          <label htmlFor={`option-${option.value}`}>
+                          <label htmlFor={`option-${option.combined}`}>
                             {dispU.capitalise(option.value)}
                           </label>
                         </div>
@@ -257,7 +260,7 @@ const Quiz = () => {
                     textAlign: "right",
                   }}
                 >
-                  {cuestionIndex + 1}
+                  {playerCuestionIndex + 1}
                 </h5>
               </div>
               <div>
