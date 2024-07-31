@@ -5,8 +5,8 @@
   "fieldsToTest": ["capital", "country/territory"],
   "categories": ["continent"],
   "questionPhrasingPerUnknown": {
-    "capital": "`What is the capital of ${knownItem}?`",
-    "country/territory": "`${knownItem} is the capital of?`"
+    "capital": "What is the capital of $?",
+    "country/territory": "$ is the capital of?"
   },
   "ignorePunctuationAndDiacriticsAndBrackets": true,
   "datums": [

@@ -133,6 +133,9 @@ const Quiz = () => {
                         )
                       ) {
                         setPlayerInput("");
+                        setShowOptions();
+                        setOptions([]);
+
                         returnToStart();
                       }
                     }}

@@ -75,7 +75,11 @@ export const makeCuestion = (quiz, prevCuestion, cuestionIndex) => {
     }
   };
   const getSpecificPhrasing = (unknownField, knownItem) => {
-    return eval(quiz.questionPhrasingPerUnknown[unknownField]);
+    let pseudoTemplateString = quiz.questionPhrasingPerUnknown[unknownField];
+    return pseudoTemplateString
+      .split("")
+      .map((char) => (char === "$" ? knownItem : char))
+      .join("");
   };
 
   let knownValue = getField(datum[knownField]);
