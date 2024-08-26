@@ -48,7 +48,13 @@ export const executors = {
       answers.push(_unknown);
     }
 
-    return { question, answers, halfMarkAnswers, datum: knownField };
+    return {
+      question,
+      answers,
+      halfMarkAnswers,
+      datum: knownField,
+      inputType: "number",
+    };
   },
 
   quickMaths1: (quiz, prevCuestion) => {
@@ -60,45 +66,12 @@ export const executors = {
       if (quiz.selectedOptions.includes("exponents")) {
         operations.push("exp");
         operations.push("exp");
-        operations.push("exp");
-        operations.push("exp");
-        operations.push("exp");
-        operations.push("exp");
-        operations.push("exp");
-        operations.push("exp");
-        operations.push("exp");
-        operations.push("exp");
-        operations.push("exp");
       }
       if (quiz.selectedOptions.includes("percentages")) {
         operations.push("per");
         operations.push("per");
-        operations.push("per");
-        operations.push("per");
-        operations.push("per");
-        operations.push("per");
-        operations.push("per");
-        operations.push("per");
-        operations.push("per");
-        operations.push("per");
-        operations.push("per");
-        operations.push("per");
-        operations.push("per");
       }
       if (quiz.selectedOptions.includes("fractions")) {
-        operations.push("fra");
-        operations.push("fra");
-        operations.push("fra");
-        operations.push("fra");
-        operations.push("fra");
-        operations.push("fra");
-        operations.push("fra");
-        operations.push("fra");
-        operations.push("fra");
-        operations.push("fra");
-        operations.push("fra");
-        operations.push("fra");
-        operations.push("fra");
         operations.push("fra");
         operations.push("fra");
       }
@@ -189,6 +162,6 @@ export const executors = {
     let data = operationFunctions[operation]();
     let question = data[0];
     let answers = [data[1]];
-    return { question, answers, datum: operation };
+    return { question, answers, datum: operation, inputType: "number" };
   },
 };

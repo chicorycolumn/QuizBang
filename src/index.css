@@ -65,3 +65,15 @@ h3 {
 .sans-serif {
   font-family: Arial, Helvetica, sans-serif;
 }
+
+/* Remove scrollbar from number input: Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Remove scrollbar from number input: Firefox */
+input[type="number"] {
+  -moz-appearance: textfield;
+}

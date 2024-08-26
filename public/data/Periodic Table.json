@@ -2,6 +2,7 @@
   "title": "Periodic Table",
   "label": "element",
   "fieldsToTest": ["name", "atomic number", "symbol"],
+  "inputTypes": { "atomic number": "number" },
   "forThisUnknownUseOnlyTheseKnowns": {
     "symbol": ["name"],
     "atomic number": ["name"]

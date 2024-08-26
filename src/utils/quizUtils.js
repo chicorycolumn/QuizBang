@@ -117,5 +117,11 @@ export const makeCuestion = (quiz, prevCuestion, cuestionIndex) => {
     }
   });
 
-  return { question, answers, datum };
+  let cuestion = { question, answers, datum };
+
+  if (quiz.inputTypes && Object.keys(quiz.inputTypes).includes(unknownField)) {
+    cuestion.inputType = quiz.inputTypes[unknownField];
+  }
+
+  return cuestion;
 };

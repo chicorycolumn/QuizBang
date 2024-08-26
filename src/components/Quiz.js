@@ -270,7 +270,7 @@ const Quiz = () => {
                 <form>
                   <input
                     id="text_input"
-                    type="text"
+                    type={cuestion?.inputType || "text"}
                     onChange={(e) => {
                       if (cuestionIsFinished) {
                         return;
