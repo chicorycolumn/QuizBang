@@ -33,7 +33,7 @@
     {
       "capital": "Laayoune (declared)",
       "country/territory": "Western Sahara",
-      "continent": "Africa",
+      "continent": "Africa N",
       "notes": [
         "The Sahrawi Arab Democratic Republic (SADR), recognized by 84 UN member states and South Ossetia, claims the mostly Moroccan-controlled Western Sahara. Moroccan-controlled territory includes Laayoune, and Morocco claims all Sahrawi-controlled territory. Tifariti is the current temporary capital of the SADR (formerly Bir Lehlou). Some government and military structures reside in exile in Tindouf, Algeria."
       ]
@@ -41,7 +41,7 @@
     {
       "capital": "Tifariti (de facto)",
       "country/territory": "Western Sahara",
-      "continent": "Africa",
+      "continent": "Africa N",
       "notes": [
         "The Sahrawi Arab Democratic Republic (SADR), recognized by 84 UN member states and South Ossetia, claims the mostly Moroccan-controlled Western Sahara. Moroccan-controlled territory includes Laayoune, and Morocco claims all Sahrawi-controlled territory. Tifariti is the current temporary capital of the SADR (formerly Bir Lehlou). Some government and military structures reside in exile in Tindouf, Algeria."
       ]
@@ -237,7 +237,7 @@
     {
       "capital": "Abuja",
       "country/territory": "Nigeria",
-      "continent": "Africa",
+      "continent": "Africa W",
       "notes": ["Lagos was the capital from 1914 to 1991."]
     },
     {
@@ -311,7 +311,7 @@
     {
       "capital": "Dodoma",
       "country/territory": "Tanzania",
-      "continent": "Africa",
+      "continent": "Africa E",
       "notes": [
         "Dar es Salaam, the former capital and largest city, continues to host some government ministries, the judiciary, and diplomatic missions."
       ]
@@ -343,7 +343,7 @@
     {
       "capital": "Malabo",
       "country/territory": "Equatorial Guinea",
-      "continent": "Africa",
+      "continent": "Africa C",
       "notes": [
         "Ciudad de la Paz is currently under construction and will become the new capital when complete."
       ]
@@ -379,13 +379,13 @@
     {
       "capital": "Gitega (de jure)",
       "country/territory": "Burundi",
-      "continent": "Africa",
+      "continent": "Africa E",
       "notes": ["Bujumbura was the capital from 1962 to 2018."]
     },
     {
       "capital": "Bujumbura (de facto)",
       "country/territory": "Burundi",
-      "continent": "Africa",
+      "continent": "Africa E",
       "notes": ["Bujumbura was the capital from 1962 to 2018."]
     },
     {
@@ -445,7 +445,7 @@
     {
       "capital": "Abidjan (former capital; still hosts some government offices)",
       "country/territory": "Ivory Coast//Côte d'Ivoire",
-      "continent": "Africa",
+      "continent": "Africa W",
       "notes": [
         "Abidjan is the largest city in Ivory Coast and is officially designated as the economic capital."
       ]
@@ -453,7 +453,7 @@
     {
       "capital": "Yamoussoukro (de jure)",
       "country/territory": "Ivory Coast//Côte d'Ivoire",
-      "continent": "Africa",
+      "continent": "Africa W",
       "notes": [
         "Abidjan is the largest city in Ivory Coast and is officially designated as the economic capital."
       ]
@@ -469,7 +469,7 @@
     {
       "capital": "Cairo",
       "country/territory": "Egypt",
-      "continent": "Africa",
+      "continent": "Africa N",
       "notes": [
         "A new capital is being built at the New Administrative Capital. It might be named Egypt."
       ]
@@ -487,7 +487,7 @@
     {
       "capital": "Algiers",
       "country/territory": "Algeria",
-      "continent": "Africa"
+      "continent": "Africa N"
     },
     {
       "capital": "Andorra la Vella",
@@ -497,7 +497,7 @@
     {
       "capital": "Luanda",
       "country/territory": "Angola",
-      "continent": "Africa"
+      "continent": "Africa C"
     },
     {
       "capital": "St. John's",
@@ -552,12 +552,12 @@
     {
       "capital": "Cotonou (de facto)",
       "country/territory": "Benin",
-      "continent": "Africa"
+      "continent": "Africa W"
     },
     {
       "capital": "Porto-Novo (official)",
       "country/territory": "Benin",
-      "continent": "Africa"
+      "continent": "Africa W"
     },
     {
       "capital": "Thimphu",
@@ -577,7 +577,7 @@
     {
       "capital": "Gaborone",
       "country/territory": "Botswana",
-      "continent": "Africa"
+      "continent": "Africa S"
     },
     {
       "capital": "Bandar Seri Begawan",
@@ -592,7 +592,7 @@
     {
       "capital": "Ouagadougou",
       "country/territory": "Burkina Faso",
-      "continent": "Africa"
+      "continent": "Africa W"
     },
     {
       "capital": "Phnom Penh",
@@ -602,7 +602,7 @@
     {
       "capital": "Yaoundé",
       "country/territory": "Cameroon",
-      "continent": "Africa"
+      "continent": "Africa C"
     },
     {
       "capital": "Ottawa",
@@ -612,17 +612,17 @@
     {
       "capital": "Praia",
       "country/territory": "Cape Verde//Cabo Verde",
-      "continent": "Africa"
+      "continent": "Africa W"
     },
     {
       "capital": "Bangui",
       "country/territory": "Central African Republic//CAR",
-      "continent": "Africa"
+      "continent": "Africa C"
     },
     {
       "capital": "N'Djamena",
       "country/territory": "Chad",
-      "continent": "Africa"
+      "continent": "Africa C"
     },
     {
       "capital": "Bogotá",
@@ -632,12 +632,12 @@
     {
       "capital": "Moroni",
       "country/territory": "Comoros",
-      "continent": "Africa"
+      "continent": "Africa SE"
     },
     {
       "capital": "Brazzaville",
       "country/territory": "Congo",
-      "continent": "Africa"
+      "continent": "Africa C"
     },
     {
       "capital": "San José",
@@ -657,7 +657,7 @@
     {
       "capital": "Kinshasa",
       "country/territory": "Democratic Republic of the Congo//DRC",
-      "continent": "Africa"
+      "continent": "Africa C"
     },
     {
       "capital": "Copenhagen",
@@ -667,7 +667,7 @@
     {
       "capital": "Djibouti",
       "country/territory": "Djibouti",
-      "continent": "Africa"
+      "continent": "Africa E"
     },
     {
       "capital": "Roseau",
@@ -692,7 +692,7 @@
     {
       "capital": "Asmara",
       "country/territory": "Eritrea",
-      "continent": "Africa"
+      "continent": "Africa E"
     },
     {
       "capital": "Tallinn",
@@ -702,17 +702,17 @@
     {
       "capital": "Lobamba (royal and legislative)",
       "country/territory": "Eswatini",
-      "continent": "Africa"
+      "continent": "Africa S"
     },
     {
       "capital": "Mbabane (administrative)",
       "country/territory": "Eswatini",
-      "continent": "Africa"
+      "continent": "Africa S"
     },
     {
       "capital": "Addis Ababa",
       "country/territory": "Ethiopia",
-      "continent": "Africa"
+      "continent": "Africa E"
     },
     {
       "capital": "Suva",
@@ -727,17 +727,17 @@
     {
       "capital": "Libreville",
       "country/territory": "Gabon",
-      "continent": "Africa"
+      "continent": "Africa C"
     },
     {
       "capital": "Banjul",
-      "country/territory": "Gambia",
-      "continent": "Africa"
+      "country/territory": "Gambia//The Gambia",
+      "continent": "Africa W"
     },
     {
       "capital": "Accra",
       "country/territory": "Ghana",
-      "continent": "Africa"
+      "continent": "Africa W"
     },
     {
       "capital": "Athens",
@@ -757,12 +757,12 @@
     {
       "capital": "Conakry",
       "country/territory": "Guinea",
-      "continent": "Africa"
+      "continent": "Africa W"
     },
     {
       "capital": "Bissau",
       "country/territory": "Guinea-Bissau",
-      "continent": "Africa"
+      "continent": "Africa W"
     },
     {
       "capital": "Georgetown",
@@ -812,7 +812,7 @@
     {
       "capital": "Nairobi",
       "country/territory": "Kenya",
-      "continent": "Africa"
+      "continent": "Africa E"
     },
     {
       "capital": "Kuwait City",
@@ -842,17 +842,17 @@
     {
       "capital": "Maseru",
       "country/territory": "Lesotho",
-      "continent": "Africa"
+      "continent": "Africa S"
     },
     {
       "capital": "Monrovia",
       "country/territory": "Liberia",
-      "continent": "Africa"
+      "continent": "Africa W"
     },
     {
       "capital": "Tripoli",
       "country/territory": "Libya",
-      "continent": "Africa"
+      "continent": "Africa N"
     },
     {
       "capital": "Vaduz",
@@ -872,12 +872,12 @@
     {
       "capital": "Antananarivo",
       "country/territory": "Madagascar",
-      "continent": "Africa"
+      "continent": "Africa SE"
     },
     {
       "capital": "Lilongwe",
       "country/territory": "Malawi",
-      "continent": "Africa"
+      "continent": "Africa SE"
     },
     {
       "capital": "Kuala Lumpur (de jure, legislative and royal)",
@@ -897,7 +897,7 @@
     {
       "capital": "Bamako",
       "country/territory": "Mali",
-      "continent": "Africa"
+      "continent": "Africa W"
     },
     {
       "capital": "Valletta",
@@ -907,12 +907,12 @@
     {
       "capital": "Nouakchott",
       "country/territory": "Mauritania",
-      "continent": "Africa"
+      "continent": "Africa W"
     },
     {
       "capital": "Port Louis",
       "country/territory": "Mauritius",
-      "continent": "Africa"
+      "continent": "Africa SE"
     },
     {
       "capital": "Mexico City",
@@ -932,17 +932,17 @@
     {
       "capital": "Rabat",
       "country/territory": "Morocco",
-      "continent": "Africa"
+      "continent": "Africa N"
     },
     {
       "capital": "Maputo",
       "country/territory": "Mozambique",
-      "continent": "Africa"
+      "continent": "Africa SE"
     },
     {
       "capital": "Windhoek",
       "country/territory": "Namibia",
-      "continent": "Africa"
+      "continent": "Africa S"
     },
     {
       "capital": "Kathmandu",
@@ -957,7 +957,7 @@
     {
       "capital": "Niamey",
       "country/territory": "Niger",
-      "continent": "Africa"
+      "continent": "Africa W"
     },
     {
       "capital": "Pyongyang",
@@ -1017,7 +1017,7 @@
     {
       "capital": "Kigali",
       "country/territory": "Rwanda",
-      "continent": "Africa"
+      "continent": "Africa E"
     },
     {
       "capital": "Basseterre",
@@ -1047,7 +1047,7 @@
     {
       "capital": "São Tomé",
       "country/territory": "São Tomé and Príncipe",
-      "continent": "Africa"
+      "continent": "Africa C"
     },
     {
       "capital": "Riyadh",
@@ -1057,7 +1057,7 @@
     {
       "capital": "Dakar",
       "country/territory": "Senegal",
-      "continent": "Africa"
+      "continent": "Africa W"
     },
     {
       "capital": "Belgrade",
@@ -1067,12 +1067,12 @@
     {
       "capital": "Victoria",
       "country/territory": "Seychelles",
-      "continent": "Africa"
+      "continent": "Africa SE"
     },
     {
       "capital": "Freetown",
       "country/territory": "Sierra Leone",
-      "continent": "Africa"
+      "continent": "Africa W"
     },
     {
       "capital": "Bratislava",
@@ -1087,27 +1087,32 @@
     {
       "capital": "Mogadishu",
       "country/territory": "Somalia",
-      "continent": "Africa"
+      "continent": "Africa E"
+    },
+    {
+      "capital": "Hargeisa",
+      "country/territory": "Somaliland",
+      "continent": "Africa E"
     },
     {
       "capital": "Bloemfontein (judicial)",
-      "country/territory": "South Africa",
-      "continent": "Africa"
+      "country/territory": "Africa South",
+      "continent": "Africa S"
     },
     {
       "capital": "Cape Town (legislative)",
-      "country/territory": "South Africa",
-      "continent": "Africa"
+      "country/territory": "Africa South",
+      "continent": "Africa S"
     },
     {
       "capital": "Pretoria (executive)",
-      "country/territory": "South Africa",
-      "continent": "Africa"
+      "country/territory": "Africa South",
+      "continent": "Africa S"
     },
     {
       "capital": "Juba",
       "country/territory": "South Sudan",
-      "continent": "Africa"
+      "continent": "Africa E"
     },
     {
       "capital": "Madrid",
@@ -1117,7 +1122,7 @@
     {
       "capital": "Khartoum",
       "country/territory": "Sudan",
-      "continent": "Africa"
+      "continent": "Africa E"
     },
     {
       "capital": "Paramaribo",
@@ -1152,7 +1157,7 @@
     {
       "capital": "Lomé",
       "country/territory": "Togo",
-      "continent": "Africa"
+      "continent": "Africa W"
     },
     {
       "capital": "Nuku'alofa",
@@ -1167,7 +1172,7 @@
     {
       "capital": "Tunis",
       "country/territory": "Tunisia",
-      "continent": "Africa"
+      "continent": "Africa N"
     },
     {
       "capital": "Ashgabat",
@@ -1182,7 +1187,7 @@
     {
       "capital": "Kampala",
       "country/territory": "Uganda",
-      "continent": "Africa"
+      "continent": "Africa E"
     },
     {
       "capital": "Kyiv",
@@ -1217,12 +1222,12 @@
     {
       "capital": "Lusaka",
       "country/territory": "Zambia",
-      "continent": "Africa"
+      "continent": "Africa SE"
     },
     {
       "capital": "Harare",
       "country/territory": "Zimbabwe",
-      "continent": "Africa"
+      "continent": "Africa SE"
     }
   ]
 }
