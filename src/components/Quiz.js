@@ -176,6 +176,9 @@ const Quiz = () => {
                   }}
                   onClick={(e) => {
                     e.preventDefault();
+                    if (showOptions) {
+                      wrapperMoveForward();
+                    }
                     setShowOptions((prev) => !prev);
                     setTimeout(() => {
                       if (round?.selectedOptions) {
@@ -191,7 +194,7 @@ const Quiz = () => {
                     }, 50);
                   }}
                 >
-                  {`${!showOptions ? "Show" : "Hide"} options`}
+                  {`${showOptions ? "Save" : "Show"} options`}
                 </button>
                 {showOptions
                   ? options.map((option, optionIndex) => {

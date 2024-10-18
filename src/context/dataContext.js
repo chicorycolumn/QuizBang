@@ -113,11 +113,13 @@ export const DataProvider = ({ children }) => {
     if (optionsHaveChanged) {
       setCuestionIndex(0);
       setOptionsHaveChanged();
+      setTimeout(() => {
+        setCuestionIndex((prev) => prev + 1);
+      }, 250);
     } else {
       setCuestionIndex((prev) => prev + 1);
+      setPlayerCuestionIndex((prev) => prev + 1);
     }
-
-    setPlayerCuestionIndex((prev) => prev + 1);
   };
 
   // Start Over
