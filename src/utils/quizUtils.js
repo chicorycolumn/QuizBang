@@ -117,7 +117,17 @@ export const makeCuestion = (quiz, prevCuestion, cuestionIndex) => {
     }
   });
 
-  let cuestion = { question, answers, datum };
+  let allAnswers = [];
+  datums.forEach((datum) => {
+    let _unknowns = getFields(datum[unknownField]);
+    _unknowns.forEach((_unknown) => {
+      if (!allAnswers.includes(_unknown)) {
+        allAnswers.push(_unknown);
+      }
+    });
+  });
+
+  let cuestion = { question, answers, datum, allAnswers };
 
   if (quiz.inputTypes && Object.keys(quiz.inputTypes).includes(unknownField)) {
     cuestion.inputType = quiz.inputTypes[unknownField];

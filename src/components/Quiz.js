@@ -299,7 +299,13 @@ const Quiz = () => {
                           10;
                         let putativeScore =
                           dispU.getPutativeScore(secondsElapsed);
-                        checkAnswer(event, playerInput, putativeScore, round);
+                        checkAnswer(
+                          event,
+                          playerInput,
+                          putativeScore,
+                          round,
+                          cuestion
+                        );
                       }
                     }}
                   >

@@ -73,15 +73,16 @@ export const DataProvider = ({ children }) => {
   };
 
   // Check Answer
-  const checkAnswer = (event, selected, putativeScore, modifiers) => {
+  const checkAnswer = (event, selected, putativeScore, modifiers, cuestion) => {
     let answers = cuestion.answers;
     let halfMarkAnswers = cuestion.halfMarkAnswers;
-
+    let allAnswers = cuestion.allAnswers || [];
     let mark = dataU.validateAnswer(
       selected,
       answers,
       halfMarkAnswers,
-      modifiers
+      modifiers,
+      allAnswers
     );
 
     cuestion["yourAnswer"] = selected;

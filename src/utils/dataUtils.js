@@ -61,21 +61,123 @@ const strip = (s, modifiers) => {
   return s || s === 0 ? s.toString().toLowerCase().trim() : "";
 };
 
-export const validateAnswer = (
-  proposedStr,
-  correctArr,
-  halfCorrectArr,
-  modifiers
-) => {
-  proposedStr = strip(proposedStr, modifiers);
+const checkIfOneCharacterOut = (shorterAnswer, longerAnswer) => {
+  console.log({ shorterAnswer, longerAnswer });
+  let longerAnswerModified = [];
+  let errorCount = 0;
 
-  if (correctArr.map((c) => strip(c, modifiers)).includes(proposedStr)) {
+  longerAnswer.split("").forEach((longChar, index) => {
+    if (errorCount > 1) {
+      return;
+    }
+    if (errorCount === 1) {
+      index = index - 1;
+    }
+    let shortChar = shorterAnswer.length > index ? shorterAnswer[index] : false;
+    if (longChar === shortChar) {
+      longerAnswerModified.push(longChar);
+    } else {
+      errorCount++;
+    }
+  });
+
+  if (errorCount > 1) {
+    return false;
+  }
+  return longerAnswerModified.join("") === shorterAnswer;
+};
+
+const checkIfAnswerIfOneCharacterOut = (
+  correctAnswerStripped,
+  playerAnswerStripped,
+  allAnswersStripped
+) => {
+  if (correctAnswerStripped === playerAnswerStripped) {
+    return true;
+  }
+
+  const alphabeticalCharsOnly = (s) => /^\p{L}+$/gu.test(s);
+
+  if (
+    !alphabeticalCharsOnly(correctAnswerStripped) ||
+    !alphabeticalCharsOnly(playerAnswerStripped)
+  ) {
+    return false;
+  }
+
+  if (correctAnswerStripped.length < 3 || playerAnswerStripped.length < 3) {
+    return false;
+  }
+
+  if (
+    allAnswersStripped
+      .filter((a) => a !== correctAnswerStripped)
+      .includes(playerAnswerStripped)
+  ) {
+    return false;
+  }
+
+  if (correctAnswerStripped.length === playerAnswerStripped.length) {
+    let errorCount = correctAnswerStripped
+      .split("")
+      .filter((correctChar, index) => {
+        let playerChar = playerAnswerStripped[index];
+        return correctChar !== playerChar;
+      }).length;
+    return errorCount <= 1;
+  }
+
+  if (correctAnswerStripped.length === playerAnswerStripped.length - 1) {
+    return checkIfOneCharacterOut(correctAnswerStripped, playerAnswerStripped);
+  }
+
+  if (playerAnswerStripped.length === correctAnswerStripped.length - 1) {
+    return checkIfOneCharacterOut(playerAnswerStripped, correctAnswerStripped);
+  }
+  return false;
+};
+
+export const validateAnswer = (
+  playerAnswer,
+  correctArr,
+  halfCorrectArr = [],
+  modifiers,
+  allAnswers
+) => {
+  let playerAnswerStripped = strip(playerAnswer, modifiers);
+  let correctArrStripped = correctArr.map((s) => strip(s, modifiers));
+
+  if (correctArrStripped.includes(playerAnswerStripped)) {
+    return 1;
+  }
+
+  let halfCorrectArrStripped = halfCorrectArr.map((s) => strip(s, modifiers));
+  if (halfCorrectArrStripped.includes(playerAnswerStripped)) {
+    return 0.5;
+  }
+
+  let allAnswersStripped = allAnswers.map((s) => strip(s, modifiers));
+
+  if (
+    correctArrStripped.some((correctAnswerStripped) =>
+      checkIfAnswerIfOneCharacterOut(
+        correctAnswerStripped,
+        playerAnswerStripped,
+        allAnswersStripped
+      )
+    )
+  ) {
     return 1;
   }
 
   if (
-    halfCorrectArr &&
-    halfCorrectArr.map((c) => strip(c, modifiers)).includes(proposedStr)
+    halfCorrectArrStripped.some((halfCorrectAnswerStripped) =>
+      checkIfAnswerIfOneCharacterOut(
+        halfCorrectAnswerStripped,
+        playerAnswerStripped,
+        allAnswersStripped
+      )
+    )
   ) {
     return 0.5;
   }
