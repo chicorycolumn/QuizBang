@@ -94,7 +94,7 @@
     },
     {
       "capital": "Washington, D.C.",
-      "country/territory": "United States//United States of America//USA",
+      "country/territory": "United States//United States of America//USA//US",
       "continent": "America (North)",
       "notes": ["The capital of the United States has moved multiple times."]
     },
@@ -1021,17 +1021,17 @@
     },
     {
       "capital": "Basseterre",
-      "country/territory": "Saint Kitts and Nevis",
+      "country/territory": "Saint Kitts and Nevis//St Kitts and Nevis",
       "continent": "America (North)"
     },
     {
       "capital": "Castries",
-      "country/territory": "Saint Lucia",
+      "country/territory": "Saint Lucia//St Lucia",
       "continent": "America (North)"
     },
     {
       "capital": "Kingstown",
-      "country/territory": "Saint Vincent and the Grenadines",
+      "country/territory": "Saint Vincent and the Grenadines//St Vincent and the Grenadines",
       "continent": "America (North)"
     },
     {
